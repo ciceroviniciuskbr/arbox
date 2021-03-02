@@ -1,0 +1,205 @@
+// FORMS ========================
+.form{
+	.form-select,
+	.form-date{
+		position: relative;
+		
+		select,
+		input[type="date"]{
+			&.form-control{
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance:none;
+				padding-right: 35px;
+			}
+			
+			&:focus{
+				color: $orange;
+				font-weight: 600;
+			}
+		}
+		
+		input[type="date"]{
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button{
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance:none;
+			}
+			
+			&.form-control{
+				padding-right: 9px;
+			}
+		}
+		
+		&:after{
+			background: $white;
+			border-right: 2px solid $black;
+			border-bottom: 2px solid $black;
+			content: '';
+			display: block;
+			@include min-max-size(8px);
+			position: absolute;
+			top: 42%;
+			right: 19px;
+			transform: rotate(45deg) translateY(-50%);
+		}
+	}
+	
+	.form-group{
+		height: 54px;
+		max-height: 54px;
+		margin-bottom: 22px;
+
+		label{
+			color: $black;
+			font-size: 0.9em;
+			font-weight: 400;
+			
+			&:not(.error){
+				color: lighten($black, 10%);
+				display: flex;
+				align-items: center;
+			}
+			
+			&[data-info="error"],
+			&.error{
+				color: $red;
+			}
+		}
+		
+		&.form-placeholder-fixed{
+			display: flex;
+			align-items: center;
+			flex-direction: row-reverse;
+			position: relative;
+			
+			input, select, textarea{
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				border-left: none;	    
+				flex: 1;
+				padding-left: 10px;
+				width: auto;
+				height: 100%;
+				
+				&:focus + .placeholder{
+					border-color: $orange !important;
+					font-weight: 600 !important;
+				}
+			}
+			
+			.placeholder{
+				@extend .form-control;
+				font-weight: 600 !important;
+				margin: 0;
+				width: auto;
+				border: 1px solid;
+				border-right: 0 !important;
+				border-top-right-radius: 0 !important;
+				border-bottom-right-radius: 0 !important;
+				padding-right: 0 !important;
+				transition: all 0.1s linear;
+			}
+		}
+	}
+	
+	label, .form-control{
+		font-family: $font_montserrat;
+	}
+	
+	.form-control{
+		background: $white;
+		border-color: #E8E8E8;
+		border-radius: 10px;
+		box-shadow: 0px 4px 50px rgba(181, 181, 181, 0.25);
+		color: #423E3D !important;
+		// font-size: 0.9em;
+		font-size: 1em;
+		font-weight: 400;
+		height: auto;
+		// padding: 15px;
+		padding: 13px 10px 15px 20px;
+		outline: none;
+		
+		@include form_placeholder(){
+			color: darken($light_gray2, 10%);
+		}
+		
+		&:focus{
+			border-color: $orange;
+			box-shadow: 0px 4px 4px #E6ECFF;
+			outline: none;
+			
+			@include form_placeholder(){
+				color: $orange;
+				font-weight: 600;
+			}
+		}
+		
+		&[data-error="error"],
+		&.error{
+			border-color: $red;
+			outline: none;
+			
+			@include form_placeholder(){
+				color: $red;
+			}
+		}
+	}
+	
+	// disable textarea resize
+	textarea{resize: none; }
+	
+	.status-msg{
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		margin: 0;
+		padding: 15px;
+		position: relative;
+		
+		&.error-msg{
+			background: $red_soft;
+			color: $red;
+			
+			&:before{ background: url('#{$path_img}element/error.svg') center no-repeat; }
+		}
+		
+		&.success-msg{
+			background: $green_soft;
+			color: darken($green_soft, 60%);
+			
+			&:before{ background: url('#{$path_img}element/success.png') center no-repeat; }
+		}
+		
+		&:before{
+			content: '';
+			display: block;
+			background-size: cover;
+			@include min-max-size(24px);
+			margin-right: 10px;
+		}
+	}
+	
+	@media (max-width: 767px){
+		.form-select,
+		.form-date{
+			&:after{
+				right: 34px;
+			}
+		}
+	}
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		.form-select,
+		.form-date{
+			select,
+			input[type="date"]{
+				&.form-control{
+					padding-right: 11px;
+				}
+			}
+		}
+	}
+}

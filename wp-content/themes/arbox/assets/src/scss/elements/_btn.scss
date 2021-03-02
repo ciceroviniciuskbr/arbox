@@ -1,0 +1,33 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.btn-green{
+    background: $green;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 12px 20px;
+    text-align: center;
+    
+    &, &:hover{
+        color: $white;
+    }
+    
+    &:hover{
+        background: darken($green, 5%);
+        transform: scale(1.02);
+        z-index: 2;
+    }
+}

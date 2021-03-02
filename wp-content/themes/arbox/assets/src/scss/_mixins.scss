@@ -1,0 +1,64 @@
+// MIXINS ============================================================
+@mixin all-space($top: 0, $left: 0, $bottom: 0, $right: 0){
+	position: absolute;
+	top: $top;
+	left: $left;
+	bottom: $bottom;
+	right: $right;
+
+	@if ($top == 0 and $left == 0 and $bottom == 0 and $right == 0){
+		height: 100%;
+		min-height: 100%;
+		width: 100%;
+		min-width: 100%;
+	}
+}
+
+@mixin min-max-size($width: 0, $height: 0){
+	width: $width;
+	min-width: $width;
+	max-width: $width;
+
+	@if($height == 0){
+		height: $width;
+		min-height: $width;
+		max-height: $width;
+	}@else{
+		height: $height;
+		min-height: $height;
+		max-height: $height;
+	}
+}
+
+@mixin keyframes($animationName){
+	@-webkit-keyframes #{$animationName}{
+		@content;
+	}
+	@-moz-keyframes #{$animationName}{
+		@content;
+	}
+	@-o-keyframes #{$animationName}{
+		@content;
+	}
+	@keyframes #{$animationName}{
+		@content;
+	}
+}
+
+@mixin form_placeholder(){
+	&::placeholder{
+		@content
+	}
+
+	&::-webkit-input-placeholder{
+		@content
+	}
+
+	&::-ms-input-placeholder{
+		@content
+	}
+
+	&::-moz-placeholder{
+		@content
+	}
+}

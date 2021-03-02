@@ -1,0 +1,200 @@
+.page-title{
+    // background: url('#{$path_img}operatrix-background.jpg') center no-repeat;
+    background: radial-gradient(106% 104.48% at 53.74% -1.8%, #11A4D7 0%, #104087 100%);
+    background-size: cover;
+    background-color: #c4c4c4;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    
+    .img{
+        // background: url('#{$path_img}.jpg') center no-repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        // width: 50%;
+        width: 100%;
+        
+        &:before, &:after{
+            // background: url('#{$path_img}element/yellow-shape.png') top no-repeat;
+            background-size: contain;
+            content: '';
+            display: block;
+            width: 100vw;
+            height: 123px;
+            position: absolute;
+            right: 0;
+        }
+        
+        &:before{
+            background: linear-gradient(270.05deg, rgba(17, 164, 215, 0) -1.65%, #0E76BF 54.25%);
+            bottom: 0;
+            height: 100%;
+        }
+        
+        &:after{
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, #162769 0%, rgba(22, 39, 105, 0) 44.74%);
+            opacity: 0.5;
+            top: 0;
+        }
+    }
+
+    .vectors{
+        background: none;
+        border-radius: 50px;
+        position: absolute;
+        z-index: 3;
+        width: 50%;
+        height: 100%;
+        display: block;
+
+        &:before, i:before, i:after{
+            content: '';
+            border: 1px solid white;
+            display: block;
+            position: absolute;
+            z-index: 3;
+            opacity: 0.3;
+        }
+
+        &:before{
+            height: 40%;
+            width: 120%;
+            top: -12%;
+            bottom: auto;
+            border-bottom-right-radius: 100px;
+            left: -30%;
+        }
+
+        i{
+            display: block;
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            &:before{
+                height: 120%;
+                width: 100%;
+                top: auto;
+                bottom: -2px;
+                border-right: none;
+                left: 35%;
+                border-bottom-left-radius: 100px;
+            }
+            &:after{
+                border: 1px solid white;
+                border-top-right-radius: 100px;
+                width: 59%;
+                height: 70%;
+                bottom: -27%;
+                top: auto !important;
+                left: -30% !important;
+            }
+        }
+    }
+    
+    &>.container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7em 0;
+        position: relative;
+        text-align: center;
+        z-index: 4;
+    }
+
+    .breadcrumb{
+        position: absolute;
+        width: 100%;
+        top: 1em;
+        left: 0;
+    }
+    
+    .title{
+        color: $white;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.5em;
+        line-height: 1.5em;
+        margin-top: -7px;
+        margin-bottom: 0;
+        padding: 0;
+        padding-left: 0;
+        text-align: center;
+        text-transform: none;
+    }
+
+    @media(max-width: 991px){
+        &>.container{
+            padding: 5em 0;
+        }
+    }
+    
+    @media(max-width: 767px){
+        padding: 0;
+        
+        &:before, &:after{
+            width: 130px;
+            height: 123px;
+        }
+
+        .vectors{
+            width: 60%;
+
+            &:before{
+                border-bottom-right-radius: 50px;
+            }
+            i{
+                &:before{
+                    border-bottom-left-radius: 50px;
+                }
+                &:after{
+                    border-top-right-radius: 50px;
+                }
+            }
+        }
+        
+        .title{
+            font-size: 1.5em;
+            line-height: 1em;
+            padding: 0;
+        }
+    }
+    
+    @media(min-width: 768px) and (max-width: 991px){
+        .title{
+            font-size: 2em;
+        }
+    }
+    
+    @media(min-width: 992px){
+        .img{ background-attachment: fixed; }
+
+        .vectors{
+            &:before{
+                animation: sliderVectorOneTopDown 3s linear;
+            }
+    
+            i{
+                &:before{
+                    animation: sliderVectorTwoLeftRight 2s linear;
+                }
+                &:after{
+                    animation: sliderVectorThreeTopDown 2.5s linear;
+                }
+            }
+        }
+    }
+    
+    @media all and (-ms-high-contrast: none),(-ms-high-contrast: active){
+        .img{ background-attachment: scroll; }
+    }
+}

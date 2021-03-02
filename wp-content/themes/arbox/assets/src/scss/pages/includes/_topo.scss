@@ -1,0 +1,238 @@
+#topo{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: $white;
+    padding: 10em 0px 10em;
+    position: relative;
+    
+    &>.container{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .title-area{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        .title{
+            color: $white;
+            font-weight: bold;
+            font-size: 3.2em;
+            line-height: 1.2em;
+            margin-bottom: 25px;
+        }
+        .subtitle{
+            font-size: 1em;
+            line-height: 1.7em;
+            letter-spacing: 0.25em;
+            margin-bottom: 3em;
+            text-transform: uppercase;
+        }
+        .btn{
+            margin-right: auto;
+            padding: 15px 25px;
+            
+            &:after{
+                content: '';
+                background: url('#{$path_img}element/comparativo-sprite.png');
+                background-position: -385px -15px;
+                height: 30px;
+                width: 29px;
+                margin-left: 10px;
+            }
+        }
+    }
+    
+    .tipos-area{
+        margin-left: auto;
+        
+        ul{
+            li{
+                display: flex;
+                align-items: center;
+                margin-bottom: 2.5em;
+                
+                .icon{
+                    margin-right: 20px;
+                    position: relative;
+                    height: 63px;
+                    width: 80px;
+                    
+                    &:before, &:after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                    }
+                    
+                    &:before{
+                        width: 63px;
+                        height: 63px;
+                        background: linear-gradient(180deg, rgba(255, 102, 0, 0.22) 0%, rgba(255, 102, 0, 0) 100%);
+                        border-radius: 10px;
+                        transform: matrix(0, 1, 1, 0, 0, 0);
+                    }
+                    &:after{
+                        background: url('#{$path_img}element/ar-condicionado-icon-sprite.png') no-repeat;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        right: 5px;
+                    }
+                }
+                
+                .tipo{
+                    color: $white;
+                    font-weight: 800;
+                    font-size: 1.1em;
+                    line-height: 1.3em;
+                    margin-bottom: 0;
+                }
+                .info{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 0.9em;
+                    line-height: 1.8em;
+                    letter-spacing: 0.25em;
+                    margin-bottom: 0;
+                    text-transform: uppercase;
+                }
+                
+                &:first-of-type{
+                    .icon{
+                        &:after{
+                            background-position: -145px -10px;
+                            width: 49px;
+                            height: 36px;
+                        }
+                    }
+                }
+                &:nth-of-type(2){
+                    .icon{
+                        &:after{
+                            background-position: -77px -10px;
+                            width: 48px;
+                            height: 48px;
+                        }
+                    }
+                }
+                &:last-of-type{
+                    .icon{
+                        &:after{
+                            background-position: -10px -10px;
+                            width: 47px;
+                            height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    #toBottom{
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        display: block;
+        height: 30px;
+        width: 50px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 2em;
+        transition: all 0.2s ease-in-out;
+        z-index: 5;
+        
+        &:before{
+            background: none;
+            border-right: 2px solid $white;
+            border-bottom: 2px solid $white;
+            content: '';
+            display: block;
+            height: 35px;
+            width: 35px;
+            transform: rotate(225deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: -15px;
+            left: -2px;
+            margin: 0 auto;
+        }
+        
+        &:hover{
+            transform: translateY(10px);
+        }
+    }
+    
+    @media(max-width: 767px){
+        padding: 2em 0px 2em;
+        
+        .title-area{
+            .title{
+                font-size: 2em;
+                margin-bottom: 18px;
+                width: 100%;
+                
+                br{
+                    display: none;
+                }
+            }
+            .subtitle{
+                font-size: 0.8em;
+                margin-bottom: 1.8em;
+            }
+            .btn{
+                padding: 7px 15px;
+                font-size: 0.85em;
+            }
+        }
+        
+        .tipos-area{
+            margin-top: 1em;
+            padding: 0;
+            
+            ul{
+                li{
+                    .icon{
+                        margin-right: 15px;
+                        height: 50px;
+                        width: 67px;
+                        
+                        &:before{
+                            height: 100%;
+                            width: 63px;
+                        }
+                        &:after{
+                            width: 49px;
+                            height: 36px;
+                            right: 0;
+                        }
+                    }
+                    .tipo{
+                        font-size: 1em;
+                    }
+                    .info{
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+        
+        #toBottom{
+            height: 25px;
+            width: 40px;
+            bottom: 1em;
+            
+            &:before{
+                height: 25px;
+                width: 25px;
+                top: -7px;
+                left: 7px;
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+.conheca-arbox{
+    padding-top: 2em;
+    
+    .title-area{
+        background: url('#{$path_img}arbox/predio-1.jpg') no-repeat;
+        background-size: auto 82%;
+        display: flex;
+        align-items: flex-start;
+        padding: 0;
+        padding-top: 3em;
+        
+        .title{
+            background: rgba(#090E17, 0.9);
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            color: $white;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2.5em;
+            line-height: 1.3em;
+            padding: 1em;
+            margin: 0;
+            margin-left: auto;
+        }
+    }
+    
+    .text-area{
+        display: flex;
+        flex-direction: column;
+        padding: 3em 4em;
+        
+        p{
+            font-size: 1em;
+            line-height: 170%;
+            line-height: 1.7em;
+            letter-spacing: 0.035em;
+        }
+        
+        ul{
+            margin-top: 2.5em;
+            margin-bottom: 2em;
+            
+            li{
+                display: flex;
+                align-items: center;
+                margin-bottom: 2.5em;
+                font-weight: bold;
+                font-size: 1.3em;
+                line-height: 1.25em;
+                
+                .icon{
+                    background: #2ACD7F;
+                    border-radius: 100%;
+                    @include min-max-size(30px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    position: relative;
+                    
+                    &:before{
+                        background: rgba($white, 0);
+                        border-right: 2px solid $white;
+                        border-bottom: 2px solid $white;
+                        content: '';
+                        display: block;
+                        width: 8px;
+                        height: 13px;
+                        transform: translateY(-1px) rotate(44deg);
+                    }
+                }
+            }
+        }
+        
+        .btn{
+            margin-top: auto;
+            margin-right: auto;
+            padding: 12px 3em 15px;
+        }
+    }
+    
+    .imgs-area{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+        &:before{
+            background: $white url('#{$path_img}element/produto-patenteado-arbox.png') center no-repeat;
+            background-size: 80% auto;
+            content: "";
+            display: block;
+            height: 160px;
+            width: 160px;
+            position: absolute;
+            bottom: 14em;
+            left: -4em;
+            border-radius: 100%;
+        }
+        
+        img{
+            &:first-of-type{
+                margin-left: auto;
+                width: 69%;
+            }
+        }
+    }
+    
+    @media(max-width: 767px){
+        padding-top: 1em;
+        
+        .title-area{
+            background-size: cover;
+            
+            .title{
+                width: 100%;
+                border-radius: 0;
+                padding: 15px 15px 20px;
+                text-align: center;
+                font-size: 1.5em;
+                
+                br{
+                    display: none;
+                }
+            }
+        }
+        
+        .text-area{
+            padding: 1em;
+            
+            p{
+                font-size: 0.95em;
+                line-height: 1.5em;
+            }
+            
+            ul{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+                li{
+                    line-height: 1.25em;
+                    margin-bottom: 15px;
+                    font-size: 0.85em;
+                }
+            }
+            
+            .btn{
+                padding: 10px 2em 12px;
+                font-size: 0.85em;
+            }
+        }
+        .imgs-area{
+            height: 300px;
+            overflow: hidden;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+            
+            &:before{
+                height: 130px;
+                width: 130px;
+                bottom: 9em;
+                left: auto;
+                // right: 11em;
+                right: 55%;
+            }
+            
+            img{
+                &:first-of-type{
+                    // width: 130px;
+                    width: 50%;
+                    margin-left: 0;
+                }
+                &:last-of-type{
+                    width: 62%;
+                    max-width: 281px;
+                }
+            }
+        }
+    }
+
+    @media(min-width: 575px) and (max-width: 767px){
+        .imgs-area{
+            &:before{
+                left: auto;
+    right: 55%;
+    bottom: auto;
+    top: 0;
+            }
+        }
+    }
+}

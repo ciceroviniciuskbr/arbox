@@ -1,0 +1,321 @@
+.video-imitacao{
+    background: linear-gradient(270deg, #F9F9F9 0.7%, rgba(249, 249, 249, 0) 101.74%);
+    margin-top: 3.5em;
+    padding-top: 3.5em;
+    
+    .video-produto{
+        margin-bottom: 4.5em;
+        
+        .title-area{
+            padding-right: 3em;
+            display: flex;
+            flex-direction: column;
+            
+            .title{
+                font-weight: bold;
+                font-size: 2em;
+                line-height: 1.5em;
+                margin-bottom: 1em;
+            }
+            .subtitle{
+                font-style: normal;
+                font-weight: 300;
+                font-size: 2em;
+                line-height: 1.5em;
+                
+                strong{
+                    color: $orange;
+                    font-weight: 600;
+                }
+            }
+            .btn{
+                margin-right: auto;
+                margin-top: 1.2em;
+                padding: 12px 2.5em;
+            }
+        }
+        .video-area{
+            background: $black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-height: 530px;
+            margin-left: auto;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            
+            &, img, span, span:before, span:after{
+                transition: all 0.2s linear;
+            }
+            
+            &:before, span{
+                position: absolute;
+            }
+            
+            &:before{
+                content: '';
+                background: rgba($black, 0.8);
+                @include all-space();
+                z-index: 1;
+            }
+            
+            img{
+                width: 100%;
+            }
+            
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-size: 1.2em;
+                margin: auto;
+                z-index: 2;
+                
+                &, &:before{
+                    @include min-max-size(70px);
+                }
+                
+                &:before{
+                    content: '';
+                    background: url('#{$path_img}element/play-button.png') no-repeat;
+                    background-position: 0px 0px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+            
+            .link{
+                @include all-space();
+                z-index: 2;
+            }
+            
+            &:hover{
+                img{
+                    opacity: 0.3;
+                }
+                span{
+                    &:before, &:after{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    
+    .imitacoes{
+        .text-area{
+            .title{
+                display: flex;
+                align-items: center;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 2em;
+                line-height: 1.5em;
+                margin-bottom: 1em;
+                
+                &:before{
+                    background: url('#{$path_img}element/close-icon.png') center no-repeat;
+                    background-size: auto 100%;
+                    content: '';
+                    display: block;
+                    margin-right: 15px;
+                    @include min-max-size(44px);
+                }
+            }
+            .description{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 0.95em;
+                line-height: 1.6em;
+                margin-bottom: 2em;
+            }
+            .prejuizos{
+                li{
+                    display: flex;
+                    align-items: center;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 0.9em;
+                    line-height: 1.3em;
+                    margin-bottom: 2.5em;
+                    
+                    &:before{
+                        background: url('#{$path_img}element/close-icon.png') center no-repeat;
+                        background-size: auto 100%;
+                        content: '';
+                        display: block;
+                        margin-right: 15px;
+                        @include min-max-size(25px);
+                    }
+                }
+            }
+        }
+        
+        .img-area{
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            padding-right: 0;
+            position: relative;
+            
+            &:before{
+                background: $white url('#{$path_img}element/produto-ilegal.png') center no-repeat;
+                background-size: 96% auto;
+                border-radius: 20px;
+                content: "";
+                display: block;
+                height: 87px;
+                width: 320px;
+                position: absolute;
+                bottom: 8em;
+                left: 2em;
+                transform: rotate(353deg);
+            }
+            
+            .img, .legenda{
+                margin-left: auto;
+                width: 80%;
+            }
+            
+            .img{
+                overflow: hidden;
+            }
+            
+            .legenda{
+                font-size: 0.9em;
+                line-height: 1.8em;
+                margin-top: 10px;
+            }
+        }
+    }
+    
+    @media(max-width: 767px){
+        margin-top: 2em;
+        padding-top: 0;
+        
+        &>.container{
+            padding: 0;
+        }
+        
+        .video-produto{
+            margin-bottom: 1em;
+            
+            .title-area{
+                padding: 0 15px;
+                
+                .title{
+                    font-size: 1.5em;
+                    margin-bottom: 10px;
+                }
+                .subtitle{
+                    font-size: 1em;
+                }
+                .btn{
+                    padding: 10px 2em 12px;
+                    font-size: 0.85em;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+            .video-area{
+                margin: 1em;
+            }
+        }
+        
+        .imitacoes{
+            .text-area{
+                margin-bottom: 1em;
+                
+                .title{
+                    font-size: 1.4em;
+                    margin-bottom: 12px;
+                    
+                    &:before{
+                        @include min-max-size(35px);
+                    }
+                }
+                
+                .description{
+                    margin-bottom: 15px;
+                    
+                    br{
+                        &:last-of-type{ display: none; }
+                    }
+                }
+                
+                .prejuizos{
+                    li{
+                        margin-bottom: 15px;
+                        font-size: 0.85em;
+                    }
+                }
+            }
+            
+            .img-area{
+                padding: 0 15px;
+
+                &:before{
+                    height: 63px;
+                    width: 230px;
+                    border-radius: 15px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    z-index: 3;
+                }
+
+                .img{
+                    width: 100%;
+                    height: 275px;
+                    position: relative;
+                    
+                    img{
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                    }
+                }
+
+                .legenda{
+                    margin: 10px auto;
+                    text-align: center;
+                    font-size: 0.85em;
+                }
+            }
+        }
+    }
+    
+    @media(min-width: 768px) and (max-width: 991px){
+        .video-produto{
+            .video-area{
+                margin: 2.5em 0;
+            }
+        }
+    }
+    
+    // IE
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+        .video-produto{
+            .video-area{
+                span{
+                    display: block;
+                    height: 125px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

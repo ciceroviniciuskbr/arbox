@@ -1,0 +1,344 @@
+.comparativo{
+    .options-wrapper-content{
+        justify-content: center;
+        margin: 4em 0 4em;
+        
+        &.row{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        .title-in-mobile{
+            display: none;
+            font-weight: 600;
+            font-size: 0.85em;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .col{ 
+            padding: 0;
+            transition: all 0.3s ease-in-out;        
+            
+            &:not(:first-child){
+                background: $white;
+                box-shadow: 0px 8px 15px 2px rgba($black,0.1);           
+            }
+            
+            .benefits-list{
+                margin-bottom: 0;
+                
+                li{
+                    height: 74px;
+                    padding: 10px;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    &:not(.title):not(:first-child){
+                        border-top: 1px solid rgba($black, 0.1);
+                    }
+                }
+            }
+            
+            .column-header{
+                height: 270px;
+                background: $white;
+                
+                .img{
+                    height: 200px;
+                    padding: 25px;
+                    text-align: center;
+                    width: 100%;
+                    
+                    img{
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+                
+                .title-area{
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    .title{
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 1em;
+                        line-height: 1.5em;
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+            }
+            
+            &.comparables{
+                .column-header{
+                    padding: 2em 3em 1em 0;
+                    
+                    .title{
+                        font-style: normal;
+                        font-weight: 100;
+                        font-size: 2.5em;
+                        line-height: 1.15em;
+                        
+                        strong{
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                .benefits-list{
+                    li{
+                        background: $white;
+                        font-size: 0.8em;
+                        font-weight: 600;
+                        justify-content: flex-start;
+                        line-height: 1.4em;
+                        padding: 1.5em 2em 1.5em 0;
+                        
+                        .icon{
+                            background: $orange;
+                            border-radius: 15px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            @include min-max-size(60px);
+                            margin-right: 2em;
+                            
+                            &:before{
+                                background: url('#{$path_img}element/comparativo-sprite.png');
+                                content: '';
+                                display: block;
+                            }
+                        }
+                        
+                        &.desbotamento{
+                            .icon{
+                                &:before{
+                                    width: 30px; height: 34px;
+                                    background-position: -54px -10px;
+                                }
+                            }
+                        }
+                        &.inseto{
+                            .icon{
+                                &:before{
+                                    width: 40px; height: 40px;
+                                    background-position: -266px -10px;
+                                }
+                            }
+                        }
+                        &.custo{
+                            .icon{
+                                &:before{
+                                    width: 40px; height: 40px;
+                                    background-position: -326px -10px;
+                                }
+                            }
+                        }
+                        &.design{
+                            .icon{
+                                &:before{
+                                    width: 24px; height: 24px;
+                                    background-position: -10px -10px;
+                                }
+                            }
+                        }
+                        &.ruido{
+                            .icon{
+                                &:before{
+                                    width: 34px; height: 34px;
+                                    background-position: -156px -10px;
+                                }
+                            }
+                        }
+                        &.manutencao{
+                            .icon{
+                                &:before{
+                                    width: 32px; height: 32px;
+                                    background-position: -104px -10px;
+                                }
+                            }
+                        }
+                        &.material{
+                            .icon{
+                                &:before{
+                                    width: 36px; height: 36px;
+                                    background-position: -210px -10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.arbox, &.caixa-fibra{
+                border: 1px solid #f1f0f4;
+                width: 340px;
+                max-width: 340px;
+                
+                .benefits-list{
+                    li{
+                        &:last-of-type{
+                            height: 110px;
+                            align-items: flex-start;
+                            padding-top: 1.6em;
+                        }
+                        p{
+                            font-size: 1.1em;
+                            line-height: 1.3em;
+                            text-align: center;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            
+            &.arbox{
+                margin-right: 13px;           
+                z-index: 10;
+                
+                .column-header{
+                    background: $white;
+                    
+                    .title-area{
+                        background: $orange;
+                        
+                        .title{
+                            color: $white;
+                        }
+                    }
+                }
+                
+                .benefits-list{
+                    li{
+                        p{
+                            color: $orange;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                
+                &:hover{
+                    border-color: $orange;
+                    transform: scale(1.01);
+                    box-shadow: 0px 4px 50px rgba(150, 132, 190, 0.18);
+                }
+            }
+            
+            &.caixa-fibra{
+                .column-header{
+                    .title-area{
+                        background: #EDEDED;
+                        color: $black;
+                    }
+                }
+                
+                .benefits-list{
+                    li{
+                        p{
+                            color: #A9A9A9;
+                        }
+                    }
+                }
+                
+                &:hover{
+                    border: 1px solid #dadada;
+                    transform: scale(0.99);
+                }
+            }
+        }
+    }
+    
+    .btn-area{
+        text-align: center;
+        
+        .btn-whatsapp{
+            background: #00AC5A;
+            border-radius: 6px;
+            padding: 1em 1.5em;
+            color: $white;
+            margin: 0 auto;
+            
+            .icon{
+                font-size: 1.5em;
+                margin-left: 15px;
+            }
+            
+            &:hover{
+                background: $whatsapp_color;
+                box-shadow: 0px 4px 19px rgb(0 0 0 / 40%);
+                transform: scale(1.05);
+            }
+        }
+    }
+    
+    @media(max-width: 767px){
+        &>.container{
+            padding: 0;
+        }
+
+        .options-wrapper-content{
+            margin: 1.5em 0 1.5em;
+            
+            .title-in-mobile{
+                display: block;
+            }
+            
+            .col{
+                width: 100%;
+                max-width: 100%;
+                flex-basis: 100%;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-bottom: 15px;
+                
+                .column-header{
+                    // height: 110px;
+                    height: auto;
+                    
+                    .img{
+                        height: 145px;
+                        padding: 20px;
+                    }
+                    
+                    .title-area{
+                        height: 60px;
+                    }
+                }
+                
+                .benefits-list{
+                    li{
+                        flex-wrap: wrap;
+                        // height: 90px;
+                        height: auto;
+
+                        &:last-of-type{
+                            height: auto !important;
+                            padding: 10px !important;
+                        }
+                    }
+                }
+                
+                &.comparables{
+                    display: none;
+                    
+                    .column-header{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .btn-area{
+            .btn-whatsapp{
+                padding: 11px 20px 13px;
+                font-size: 0.85em;
+            }
+        }
+    }
+}

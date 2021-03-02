@@ -1,0 +1,110 @@
+body{
+	background: $white;
+	font-family: $font_default;
+	// color: $black;
+	color: $black;
+	position: relative;
+}
+
+// links -------------------------------------------
+a{
+	&,
+	&:active,
+	&:focus,
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+// listas ------------------------------------------
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+	max-width: 100%;
+}
+
+.content-wrapper{
+	background: $white;
+}
+
+/* lightGallery ============================= */
+.simple-lightbox{
+    .sl-counter{
+        display: none !important;
+    }
+    
+    .sl-close{
+        padding: 5px;
+        
+        span{
+            background-image: url('#{$path_img}element/close-icon.png') !important;
+        }
+    }
+    
+    .sl-prev span{
+        background-image: url('#{$path_img}element/left-icon.png') !important;
+    }
+    
+    .sl-next span{
+        background-image: url('#{$path_img}element/right-icon.png') !important;
+    }
+    
+    .sl-close span,
+    .sl-prev span,
+    .sl-next span{
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .sl-close, .sl-counter{
+        color: $white;
+    }
+    
+    @media(max-width: 767px){
+        .sl-close,
+        .sl-prev,
+        .sl-next{
+            height: 30px !important;
+            width: 30px !important;
+            padding: 0;
+            
+            span{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        
+        .sl-prev,
+        .sl-next{
+            span{
+                background-position-x: -5px;
+            }
+        }
+        
+        .sl-prev{
+            span{
+                background-position-x: -5px;
+                margin-right: auto;
+            }
+        }
+        
+        .sl-next{
+            span{
+                background-position-x: 5px;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.sl-overlay{
+    background: $black !important;
+    opacity: 0.92 !important;
+}

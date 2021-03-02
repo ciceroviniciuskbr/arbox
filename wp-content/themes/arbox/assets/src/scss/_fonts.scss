@@ -1,0 +1,12 @@
+// Typography
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+$font_notosans: 'Noto Sans JP', 'Arial', sans-serif;
+$font_montserrat: 'Montserrat', $font_notosans;
+$font_default: $font_notosans;
+
+$font_icons: "Font Awesome 5 Free";
+$font_icons_brands: "Font Awesome 5 Brands";
+
+$font-size-base: 0.9rem;
+$line-height-base: 1.5

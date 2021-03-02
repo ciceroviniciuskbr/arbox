@@ -1,0 +1,67 @@
+.como-comprar{
+    padding-top: 3.5em;
+    padding-bottom: 3.5em;
+
+    &>.container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .title-area{
+        .title{
+            font-style: normal;
+            font-weight: 300;
+            font-size: 2.3em;
+            line-height: 1.2em;
+            margin-bottom: 0;
+
+            b{
+                color: $orange;
+                font-weight: 800;
+            }
+        }
+    }
+    .text-area{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        p{
+            font-size: 0.95em;
+            line-height: 1.7em;
+            letter-spacing: 0.035em;
+            margin-bottom: 1.8em;
+        }
+        a{
+            margin-right: auto;
+            padding: 12px 3em 15px;
+        }
+    }
+
+    @media(max-width: 767px){
+        padding-top: 1.5em;
+    padding-bottom: 2em;
+
+    &, &>.container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .title-area{
+        .title{
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+    }
+    .text-area{
+        p{
+            margin-bottom: 18px;
+        }
+        a{
+            padding: 10px 2em 12px;
+            font-size: 0.85em;
+        }
+    }
+    }
+}

@@ -1,0 +1,548 @@
+footer{
+    color: $white;
+    margin-top: 3.5em;
+    padding-top: 4em;
+    position: relative;
+    
+    &, .container{
+        background: $orange;
+    }
+    
+    &:before, &:after{
+        background: url('#{$path_img}element/orange-bars.png') no-repeat;
+        background-size: auto 100%;
+        content: "";
+        display: block;
+        min-height: 300px;
+        height: 60%;
+        width: 6%;
+        position: absolute;
+    }
+    &:before{
+        left: 0;
+        transform: scaleX(-1);
+        bottom: 38px;
+        opacity: 0.7;
+    }
+    &:after{
+        right: 0;
+        top: 0;
+    }
+    
+    .container{
+        z-index: 1;
+        position: relative;
+    }
+    
+    a{
+        color: $white;
+        &:hover{ color: $black; }
+    }
+    
+    .form-area{
+        .col-title-img{
+            border-bottom: 4px solid $white;
+            
+            img{
+                max-width: 94%;
+            }
+            .link-whatsapp{
+                color: $white;
+                display: inline-flex;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                height: 53px;
+                line-height: 1.5em;
+                margin-top: 15px;
+                margin-bottom: 25px;
+                position: relative;
+                padding-right: 1.5em;
+                text-align: center;
+                
+                &, &:before{
+                    transition: all 0.2s ease-in-out;
+                }
+                
+                .icon{
+                    color: $orange;
+                    font-size: 2em;
+                    margin-right: 20px;
+                }
+                
+                p{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0;
+                    position: relative;
+                    z-index: 2;
+                }
+                
+                &:before{
+                    content: '';
+                    background: $white;
+                    border-radius: 50px;
+                    display: block;
+                    position: absolute;
+                    left: 1px;
+                    top: 50%;
+                    bottom: 0;
+                    height: 53px;
+                    width: 100%;
+                    max-width: 53px;
+                    z-index: 0;
+                    transform: translateY(-50%);
+                    // width: 100%;
+                }
+                
+                &:hover{
+                    .icon{
+                        color: $white;
+                    }
+                    &:before{
+                        background: $green;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        .title{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2.3em;
+            line-height: 1.3em;
+        }
+    }
+    .col-form{
+        background: $white;
+        border-radius: 14px;
+        border-bottom-left-radius: 0;
+        padding: 4em 4em;
+        
+        .form{
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            
+            .form-group{
+                margin-bottom: 30px;
+                padding: 0;
+            }
+            .eu-sou{
+                .placeholder{
+                    min-width: 90px;
+                }
+                select{
+                    max-width: calc(100% - 90px);
+                }
+            }
+            
+            .btn{
+                margin-top: auto;
+                margin-right: auto;
+                padding: 15px 25px;
+                
+                &:after{
+                    content: '';
+                    background: url('#{$path_img}element/comparativo-sprite.png');
+                    background-position: -385px -15px;
+                    height: 30px;
+                    width: 29px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    
+    #toUp{
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        display: block;
+        height: 30px;
+        width: 50px;
+        position: absolute;
+        right: 1.5em;
+        bottom: 10em;
+        transition: all 0.2s ease-in-out;
+        z-index: 10;
+        
+        &:before{
+            background: none;
+            border-right: 2px solid $white;
+            border-bottom: 2px solid $white;
+            content: '';
+            display: block;
+            height: 35px;
+            width: 35px;
+            transform: rotate(225deg);
+            position: absolute;
+            top: 8px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        
+        &:hover{
+            transform: translateY(-10px);
+        }
+    }
+    
+    .sitemap, .credits{
+        .container{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+    
+    .sitemap, .credits{
+        font-family: $font_montserrat;
+    }
+    
+    .sitemap{
+        padding: 3em 0 2.5em;
+        position: relative;
+        z-index: 3;
+        
+        .container{
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        
+        .title{
+            font-weight: 600;
+            margin-bottom: 1em;
+            font-size: 1em;
+            line-height: 1.3em;
+        }
+        
+        .acesso-rapido{
+            .links{
+                list-style: none;
+                padding-left: 0;
+                
+                li{
+                    display: flex;
+                    align-items: center;
+                    font-size: 0.95em;
+                    margin-bottom: 15px;
+                    
+                    &:before{
+                        background: none;
+                        border-right: 2px solid $white;
+                        border-bottom: 2px solid $white;
+                        content: '';
+                        display: block;
+                        @include min-max-size(8px);
+                        margin-right: 12px;
+                        transform: rotate(-45deg) translateY(0);
+                    }
+                }
+            }
+        }
+        
+        .inpi{
+            margin: 0 auto;
+            
+            .description{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 0.9em;
+                line-height: 1.5em;
+                letter-spacing: 0.035em;
+                margin-bottom: 2em;
+            }
+        }
+        
+        .contato-whatsapp{
+            .title{
+                text-transform: uppercase;
+            }
+            
+            .description{
+                font-style: normal;
+                font-size: 1em;
+                font-weight: 600;
+                line-height: 1.2em;
+                margin-bottom: 2em;
+            }
+            
+            .contato{
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 1em;
+                padding-left: 0;
+                position: relative;
+                
+                p{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 1.2em;
+                    line-height: 1.2em;
+                    letter-spacing: 1px;
+                    margin: 0;
+                    text-transform: uppercase;
+                }
+                
+                .link{
+                    color: $white;
+                    display: flex;
+                    align-items: center;
+                    font-style: normal;
+                    
+                    .icon{
+                        background-color: $white;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.1em;
+                        font-weight: 600;
+                        @include min-max-size(30px);
+                        margin-bottom: 0;
+                        margin-right: 10px;
+                        padding: 0;
+                        
+                        &:before{
+                            color: $orange;
+                            font-size: 0.9em;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                &:hover{
+                    &, .icon{
+                        &:before{
+                            color: $white;
+                        }
+                    }
+                }
+                
+                &.telephone{
+                    .icon{
+                        transform: rotate(90deg);
+                    }
+                    &:hover{
+                        .icon{
+                            background-color: #026cb7;
+                        }
+                    } 
+                }
+                &.whatsapp{
+                    &:hover{
+                        .icon{
+                            background-color: $green;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+    
+    .credits{
+        font-size: 0.8em;
+        padding: 2.5em 0;
+        
+        &, .container{
+            // background: #FF7316;
+            background: #ff7400;
+        }
+        
+        .copyright,
+        .developed-by{
+            display: flex;
+            align-items: center;
+            
+            p{ margin: 0; }
+        }
+        
+        .copyright{
+            a{
+                font-weight: 600;
+            }
+        }
+        
+        .developed-by{
+            justify-content: flex-end;
+            margin-left: auto;
+            
+            a{
+                font-weight: 300;
+                display: flex;
+                align-items: center;
+                
+                img{ margin-left: 6px; }
+                
+                &:hover{
+                    color: $white;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    
+    @media(max-width: 767px){
+        padding-top: 2em;
+        
+        .form-area{
+            .title{
+                font-size: 1.5em;
+                text-align: center;
+            }
+            .col-title-img{
+                border: none;
+                text-align: center;
+                
+                img{
+                    max-width: 50%;
+                    margin: 0 auto;
+                }
+                
+                .link-whatsapp{
+                    text-align: left;
+                    font-size: 0.9em;
+                    padding-top: 5px;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+        
+        .col-form{
+            border-radius: 0;
+            padding: 2em 1em;
+            
+            .form{
+                .form-group{
+                    margin-bottom: 20px;
+                    
+                    &.qtde-caixas, &.onde-estamos{
+                        width: 100% !important;
+                    }
+                }
+                
+                .btn{
+                    padding: 9px 20px;
+                    font-size: 0.85em;
+                    margin: 0 auto;
+                }
+            }
+        }
+        
+        .sitemap{
+            padding: 1.5em 0 12px;
+            
+            .acesso-rapido{
+                .links{
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+                    li{
+                        margin-right: 2em;
+                    }
+                }
+            }
+            
+            .inpi{
+                margin: 10px auto 2em;
+
+                .description{
+                    margin-bottom: 12px;
+                }
+            }
+            
+            .contato-whatsapp{
+                .title{
+                    margin-bottom: 0;
+                }
+                .description{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        
+        #toUp{
+            height: 30px;
+            width: 48px;
+            right: 1em;
+            bottom: 7.5em;
+            
+            &:before{
+                height: 25px;
+                width: 25px;
+                top: 7px;
+                left: 4px;
+            }
+        }
+        
+        .credits{
+            padding: 1.5em 0;
+            
+            .copyright{
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .developed-by{
+                justify-content: center;
+                margin-top: 1em;
+            }
+        }
+    }
+    
+    @media(max-width: 499px){
+        .credits{
+            .copyright{
+                padding: 0;
+            }
+        }
+    }
+    
+    @media(min-width: 500px) and (max-width: 767px){
+        .sitemap{
+            padding-top: 1.2em;
+        }
+    }
+    
+    @media(min-width: 768px) and (max-width: 991px){
+    }
+    
+    @media(min-width: 768px) and (max-width: 1199px){
+        .credits{
+            padding: 1.8em 0;
+        }
+    }
+    
+    @media(min-width: 992px){
+        .form-area{
+            .col-title-img{
+                padding-right: 4em;
+            }
+        }
+    }
+    
+    @media(min-width: 1400px){
+        #toUp{
+            right: 3.5em;
+            bottom: 11em;
+        }
+    }
+    
+    @media(max-width: 1499px){
+        &:before, &:after{
+            width: 6%;
+        }
+    }
+    @media(min-width: 1500px){
+        &:before, &:after{
+            width: 10%;
+        }
+    }
+    
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    }
+}

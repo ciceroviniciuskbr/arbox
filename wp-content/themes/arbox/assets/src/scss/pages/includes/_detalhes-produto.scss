@@ -1,0 +1,233 @@
+.detalhes-produto{
+    margin-top: 5.5em;
+    
+    .text-area{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 2em;
+        
+        .title-area{
+            .title{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 2.3em;
+                line-height: 1.2em;
+                margin-bottom: 0;
+                
+                b{
+                    color: $orange;
+                    font-weight: 800;
+                }
+            }
+        }
+        .text{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-left: auto;
+            padding-left: 0;
+            
+            p{
+                font-size: 0.95em;
+                line-height: 1.7em;
+                letter-spacing: 0.035em;
+                margin-bottom: 1.8em;
+            }
+            a{
+                margin-right: auto;
+                padding: 12px 3em 15px;
+            }
+        }
+    }
+    
+    .imgs-area{
+        padding: 0 4em;
+        
+        .item{
+            padding: 0;
+            
+            .img{
+                display: flex;
+                height: 215px;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                
+                &>img{
+                    min-height: 100%;
+                    min-width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+                
+                .cores{
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+                    .cor{
+                        border: 1px solid #F0EFF4;
+                        border-top: none;
+                        border-left: none;
+                        height: 50%;
+                        width: 50%;
+                        padding: 8px;
+                        
+                        img{
+                            height: 60px;
+                        }
+                        p{
+                            color: $black;
+                            font-weight: bold;
+                            font-size: 0.75em;
+                            line-height: 1.2em;
+                            margin-bottom: 15px;
+                        }
+                        
+                        &:last-of-type, &:nth-last-of-type(2){
+                            border-bottom: none;
+                        }
+                    }
+                    &:first-of-type{
+                        flex: 0 0 66.66%;
+                        max-width: 66.66%;
+                    }
+                    &:last-of-type{
+                        flex: 0 0 33.33%;
+                        max-width: 33.33%;
+                        
+                        .cor{
+                            border-right: none;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            
+            .text{
+                display: flex;
+                align-items: center;
+                padding-left: 1.3em;
+                position: relative;
+                
+                &:before{
+                    background: linear-gradient(180deg, $orange 0%, $white 100%);
+                    border-radius: 5px;
+                    content: '';
+                    width: 20px;
+                    height: 80px;
+                    display: block;
+                    margin-top: -1.3em;
+                }
+                .icon{
+                    color: $orange;
+                    margin-right: 15px;
+                }
+                .nome{
+                    color: $black;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 0.9em;
+                    line-height: 1.3em;
+                    margin-left: 1em;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    
+    .btn-area{
+        margin-top: 3em;
+        text-align: center;
+        
+        .btn{
+            background: $white;
+            border: 1px solid #CECECE;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 100;
+            padding: 1.2em 2.5em;
+            color: $black;
+            margin: 0 auto;
+            
+            &:hover{
+                background: $orange;
+                border-color: $orange;
+                color: $white;
+                box-shadow: 0px 4px 19px rgb(0 0 0 / 40%);
+                transform: scale(1.05);
+            }
+        }
+    }
+    
+    @media(max-width: 767px){
+        margin-top: 2.5em;
+        
+        .text-area{
+            margin-bottom: 0;
+            
+            &, .title-area, .text{
+                padding: 0;
+            }
+            
+            .title-area{
+                .title{
+                    font-size: 1.5em;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .imgs-area{
+            padding: 0 1em;
+
+            .item{
+                margin-bottom: 1em;
+
+                .img{
+                    height: 145px;
+
+                    &>img{
+                        top: 65%;
+                    }
+                }
+
+                .text{
+                    .nome{
+                        font-size: 0.9em
+                    }
+                    .icon{
+                        margin-right: 6px;
+                    }
+                }
+
+                &:last-of-type{
+                    .img{
+                        height: 160px;
+
+                        .cores{
+                            .cor{
+                                p{
+                                    margin-bottom: 7px;
+                                }
+                                img{
+                                    height: 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .btn-area{
+            margin-top: 1em;
+
+            .btn{
+                padding: 13px 20px 15px;
+            }
+        }
+    }
+}

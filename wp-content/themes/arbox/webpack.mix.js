@@ -17,11 +17,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 | file for the application as well as bundling up all the JS files.
 |
 */
-mix.extend('disableWarning', new babelFix());
-
 mix.js('assets/src/js/app.js', 'assets/dist/js/scripts.min.js')
     //   .babel('assets/dist/js/scripts.min.js', 'assets/dist/js/scripts.min.js')
-   .disableWarning()
    .sass('assets/src/scss/main.scss', 'assets/dist/css/main.min.css')
    .options({ outputStyle: 'compressed', processCssUrls: false });
 
