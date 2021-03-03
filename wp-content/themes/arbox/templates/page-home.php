@@ -37,7 +37,6 @@ $topo = get_field('topo'); ?>
         <div class="video-area">
             <video id="video" class="mutable" autoplay muted loop>
                 <source data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/video/arbox-video.mp4" type='video/mp4' />
-            
             </video>
         </div>
     </div>

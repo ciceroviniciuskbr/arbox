@@ -242,7 +242,7 @@ footer{
                         margin-right: 12px;
                         transform: rotate(-45deg) translateY(0);
                     }
-
+                    
                     &.btn{
                         display: none;
                     }
@@ -391,11 +391,11 @@ footer{
             }
         }
     }
-
+    
     &.obrigado{
         margin: 0;
         padding-top: 0em;
-
+        
         .form-area{
             display: none;
         }
@@ -438,6 +438,19 @@ footer{
                     &.qtde-caixas, &.onde-estamos{
                         width: 100% !important;
                     }
+                    
+                    &.form-placeholder-fixed{
+                        input, textarea, select{
+                            width: 100%;
+                        }
+                        .placeholder{
+                            font-size: 0.85em;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            padding: 13px 10px 15px 10px;
+                        }
+                    }
                 }
                 
                 .btn{
@@ -464,7 +477,7 @@ footer{
             
             .inpi{
                 margin: 10px auto 2em;
-
+                
                 .description{
                     margin-bottom: 12px;
                 }

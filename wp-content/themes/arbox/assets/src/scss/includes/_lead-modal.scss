@@ -202,4 +202,13 @@
             }
         }
     }
+
+    @media(max-width:767px){
+        .modal-dialog{
+            margin: auto;
+        }
+        .modal-content{
+            width: 100%;
+        }
+    }
 }

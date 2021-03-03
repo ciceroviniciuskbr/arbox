@@ -209,6 +209,10 @@ const app =  {
     },
     
     init: function(){
+        if(app.functions.checkDevice('mobile') || app.functions.checkDevice('tablet')){
+            $('#topo #video').remove();
+        }
+
         $(document).ready(function(){
             if($('#topo #video').length){
 
