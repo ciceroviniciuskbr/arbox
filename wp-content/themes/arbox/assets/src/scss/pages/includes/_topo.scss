@@ -11,6 +11,39 @@
         flex-wrap: wrap;
         position: relative;
     }
+
+    &:not(.obrigado){
+        overflow: hidden;
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba($black, 0.7);
+            z-index: 2;
+        }
+
+        &>.container{
+            z-index: 3;
+        }
+    }
+
+    .video-area{
+        @include all-space();
+        z-index: 1;
+        
+        video{
+            min-height: 100%;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
     
     .title-area{
         display: flex;
@@ -167,7 +200,27 @@
             transform: translateY(10px);
         }
     }
+
+    &.obrigado{
+        background-image: url('#{$path_img}predio-caixa-de-ar-condicionado-ar-box.jpg');
+
+        .title-area{
+            .btn{
+                &:after{
+                    display: none;
+                }
+            }
+        }
+    }
     
+    @media(max-width: 991px){
+        &:not(.obrigado){
+            &:before{
+                display: none;
+            }
+        }
+    }
+
     @media(max-width: 767px){
         padding: 2em 0px 2em;
         

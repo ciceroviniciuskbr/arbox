@@ -18,7 +18,7 @@
                         <label class="placeholder" for="nm_whatsapp"><i class="fas fa-user icon"></i></label>
                     </div>
                     <div class="form-group form-placeholder-fixed telephone">
-                        <input type="tel" name="tel_whatsapp" id="tel_whatsapp" class="form-control" data-mask="telcelphone" required="required" placeholder="Telefone" />
+                        <input type="tel" name="tel_whatsapp" id="tel_whatsapp" class="form-control telcelphone" data-mask="telcelphone" required="required" placeholder="Telefone" />
                         <label class="placeholder" for="tel_whatsapp"><i class="fas fa-phone-alt icon"></i></label>
                     </div>
                     <div class="form-group form-placeholder-fixed email">

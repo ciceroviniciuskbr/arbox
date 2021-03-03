@@ -6,7 +6,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
     <div class="container">
         <div class="row">
             <div class="col-6 col-md-3 col-lg-2 col-logo">
-                <a href="<?php echo get_current_url_page(); ?>" title="<?php echo esc_attr(get_bloginfo('description', 'display')); ?> | <?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+                <a href="<?php echo get_site_url(); ?>" title="<?php echo esc_attr(get_bloginfo('description', 'display')); ?> | <?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
                     <img src="<?php echo $image[0]; ?>" class="img-fluid" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" />
                 </a>
             </div>

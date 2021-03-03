@@ -9,7 +9,7 @@
             <div class="col-md-7 video-area">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/img-video-ar-box.jpg" class="img-fluid" alt="Ar Box" title="Clique para ver o vídeo" />
                 <span></span>
-                <a href="#" class="link" title="Clique para ver o vídeo"></a>
+                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/video/arbox-video-ilustrativo.mp4" data-lity class="link" title="Clique para ver o vídeo"></a>
             </div>
         </div>
 

@@ -1,10 +1,14 @@
-
+php_value max_execution_time 600
+php_value memory_limit 256M
+php_value post_max_size 32M
+php_value upload_max_filesize 32M
 # BEGIN WordPress
-# As diretrizes (linhas) entre `BEGIN WordPress` e` END WordPress` são
+# As diretrizes (linhas) entre "BEGIN WordPress" e "END WordPress" são
 # geradas dinamicamente e só devem ser modificadas através de filtros do WordPress.
 # Quaisquer alterações nas diretivas entre esses marcadores serão sobrescritas.
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f

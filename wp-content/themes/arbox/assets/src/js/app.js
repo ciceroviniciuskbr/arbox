@@ -7,7 +7,33 @@ import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/util";
 
 const app =  {
+    breakpoints: {
+		mobile: '(max-width: 767px)',
+		tablet: '(min-width: 768px) and (max-width: 991px)',
+		desktop: '(min-width: 992px)'
+    },
+    
     plugins: {
+        mask: function() {
+            var SPMaskBehavior = function(val) {
+                return val.replace(/\D/g, "").length === 11
+                ? "(00) 00000-0000"
+                : "(00) 0000-00009";
+            };
+            
+            var spOptions = {
+                onKeyPress: function(val, e, field, options) {
+                    field.mask(SPMaskBehavior.apply({}, arguments), options);
+                }
+            };
+            
+            $('[data-mask="date"]').mask("00/00/0000");
+            $('[data-mask="telephone"]').mask("(00) 0000-0000");
+            $('[data-mask="celphone"]').mask(SPMaskBehavior, spOptions);
+            // $('[data-mask="telcelphone"]').mask(SPMaskBehavior, spOptions);
+            $('.telcelphone').mask(SPMaskBehavior, spOptions);
+        },
+        
         slick: {
             avaliacoes: function(){
                 $('.clientes .depoimentos ul').slick({
@@ -74,6 +100,11 @@ const app =  {
     },
     
     functions: {
+        checkDevice: function(device){
+			device = app.breakpoints[device];
+			return (window.matchMedia(device).matches)? true : false;
+        },
+        
         smoothAncora: function() {
             $(".anchor").on('click', function(event) {
                 event.preventDefault();
@@ -151,20 +182,57 @@ const app =  {
                     $("#formWhatsApp").submit();
                 }
             });
+        },
+        
+        modalPopupExit: function(){
+            var showlead;
+            $(document).ready(function () {
+                setTimeout(function () {
+                    $('body').mouseleave(function () {
+                        window.sessionStorage.setItem('showlead', '1');
+                        if (showlead != true) {
+                            showlead = true;
+                            $('body').addClass('modal-open');
+                            $('#exit-popup').addClass('show');
+                        }
+                    })
+                }, 2000);
+            });
+
+            $('#exit-popup, #exit-popup .close').on('click', function(e) {
+                if($(e.target).hasClass('modal') || $(e.target).hasClass('close')){
+                    $('body').removeClass('modal-open');
+                    $('#exit-popup').removeClass('show');
+                }
+            });
         }
     },
     
     init: function(){
         $(document).ready(function(){
+            if($('#topo #video').length){
+
+                if(!app.functions.checkDevice('mobile') && !app.functions.checkDevice('tablet')){
+                    var videoSrc = $('#topo #video source').attr('data-src');
+                    $('#topo #video').attr('src', videoSrc);
+                }
+            }
+
             app.functions.smoothAncora();
+
+            if($('.video-imitacao .video-area .link').length){
+                $('.video-imitacao .video-area .link').simpleLightbox();
+            }
         });
         
-        // $(document).on("click", '.whatsapp-button', function() {
-        //     $("#whatsapp-modal").css("display","flex")
-        // });
         app.functions.goToWhatsApp();
         app.plugins.slick.avaliacoes();
         app.plugins.slick.antesDepois();
+        app.plugins.mask();
+
+        if (window.sessionStorage.getItem('showlead') == null) {
+            app.functions.modalPopupExit();
+        }
     }
 }
 

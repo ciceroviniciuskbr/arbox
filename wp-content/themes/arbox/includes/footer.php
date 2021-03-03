@@ -1,5 +1,6 @@
-    <footer id="rodape">
+    <footer <?php if(!is_front_page()){ echo 'class="obrigado"'; } ?> id="rodape">
         <div class="container">
+        <?php if(is_front_page()){ ?>
             <div class="row form-area">
                 <div class="col-md-6 col-title-img">
                     <h3 class="title" title="Adquirir agora mesmo Caixa de Alumínio para Ar condicionado | Ar Box">Adquirir agora mesmo Caixa de Alumínio para Ar condicionado</h3>
@@ -9,7 +10,7 @@
                     </a>
                 </div>
                 <div class="col-md-6 col-form">
-                    <form action="../contato-post" method="POST" class="form">
+                    <form action="../envio-contato" method="POST" class="form">
                         <div class="form-group col-12 form-placeholder-fixed">
                             <input type="text" name="nome" id="nome" class="form-control" required="required" />
                             <label class="placeholder" for="nome">Nome:</label>
@@ -58,21 +59,19 @@
                     </form>
                 </div>
             </div>
+        <?php } ?>
 
             <div class="row sitemap">
                 <div class="col-md-3 site-area acesso-rapido">
-                    <h6 class="title" title="Veja as áreas do Portal da Operatrix">Acesso rápido</h6>
-                    <ul class="links">
-                        <li>
-                            <a href="https://www.arboxcaixas.com.br/" title="Clique para acessar a home da Ar Box">Home</a>
-                        </li>
-                        <li>
-                            <a href="https://www.arboxcaixas.com.br/produto" title="Clique para acessar a página do produto | da Ar Box">Produto</a>
-                        </li>
-                        <li>
-                            <a href="https://www.arboxcaixas.com.br/blog/1/0/Blog" title="Clique para acessar o blog da Ar Box">Blog</a>
-                        </li>
-                    </ul>
+                    <h6 class="title" title="Ar Box">Acesso rápido</h6>
+                    <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'nav_menu',
+                            'menu_class'     => 'links',
+                            'container'      => false,
+                            'depth'          => 2
+                        ));
+                    ?>
                 </div>
 
                 <div class="col-md-5 inpi">
@@ -89,7 +88,7 @@
                     
                     <ul class="contatos-list">
                         <li class="contato telephone">
-                            <a href="tel:+55132138-3630" class="link telephone" target="_blank" title="Fale conosco por telefone">
+                            <a href="tel:+551321383630" class="link telephone" target="_blank" title="Fale conosco por telefone">
                                 <i class="btn fas fa-phone icon"></i>
                                 <p>(13) 2138-3630</p>
                             </a>

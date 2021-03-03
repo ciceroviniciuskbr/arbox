@@ -43,6 +43,9 @@ $insert_array = array(
 $exists = $wpdb->get_var( "SELECT COUNT(*) FROM {$table} WHERE telefone_whatsapp = '{$telefone}'" );
 
 // if ($exists) die();
-if ($exists) wp_redirect( get_site_url());
+// if ($exists) wp_redirect( get_site_url());
+if ($exists) wp_redirect( get_site_url() .'/obrigado-whatsapp');
+
 // if ($wpdb->insert($table, $insert_array)) die();
-if ($wpdb->insert($table, $insert_array)) wp_redirect( get_site_url());
+// if ($wpdb->insert($table, $insert_array)) wp_redirect( get_site_url());
+if ($wpdb->insert($table, $insert_array)) wp_redirect( get_site_url() .'/obrigado-whatsapp');

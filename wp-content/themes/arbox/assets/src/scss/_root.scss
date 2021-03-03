@@ -3,7 +3,31 @@ body{
 	font-family: $font_default;
 	// color: $black;
 	color: $black;
-	position: relative;
+    position: relative;
+    
+    .blackdrop{
+		background: rgba($black, 0.8);
+		display: none;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		&.showed{
+			display: block;
+			z-index: 11;
+		}
+	}
+	
+	&.modal-open{
+		overflow: hidden;
+		
+		// .blackdrop{
+		// 	display: block;
+		// 	z-index: 11;
+		// }
+	}
 }
 
 // links -------------------------------------------

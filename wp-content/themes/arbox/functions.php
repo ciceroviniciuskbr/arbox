@@ -63,7 +63,6 @@ register_nav_menus( array(
 // Menu Leads Whatsapp
 add_action('admin_menu', 'whatsapp_menu');
 include("config/listagem_whatsapp.php");
-
 function whatsapp_menu() {
     add_menu_page(
         'Leads Whatsapp',
@@ -73,5 +72,35 @@ function whatsapp_menu() {
 		'listar_lead_whatsapp',
 		'dashicons-media-spreadsheet',
 		28
+	);
+}
+
+// Menu Leads Popup Exit
+add_action('admin_menu', 'lead_menu');
+include("config/listagem_lead.php");
+function lead_menu() {
+    add_menu_page(
+        'Leads Popup Exit',
+		'Leads Popup Exit',
+		'administrator',
+		'lead_menu',
+		'listar_lead_saida',
+		'dashicons-media-spreadsheet',
+		26
+	);
+}
+
+// Menu Orcamentos
+add_action('admin_menu', 'contato_menu');
+include("config/listagem_contato.php");
+function contato_menu() {
+	add_menu_page(
+		'Contatos',
+		'Contatos',
+		'administrator',
+		'contato_menu',
+		'listar_contato',
+		'dashicons-media-spreadsheet',
+		29
 	);
 }
