@@ -185,22 +185,24 @@ const app =  {
         },
         
         modalPopupExit: function(){
-            var showlead;
+            // var showlead = false;
             $(document).ready(function () {
                 setTimeout(function () {
-                    $('body').mouseleave(function () {
-                        window.sessionStorage.setItem('showlead', '1');
-                        if (showlead != true) {
-                            showlead = true;
+                    $(document).mouseleave(function () {
+                        // if (showlead != true)
+                        if (window.sessionStorage.getItem('showlead') == null) {
+                            // showlead = true;
                             $('body').addClass('modal-open');
                             $('#exit-popup').addClass('show');
                         }
                     })
-                }, 2000);
+                }, 5000);
             });
 
             $('#exit-popup, #exit-popup .close').on('click', function(e) {
                 if($(e.target).hasClass('modal') || $(e.target).hasClass('close')){
+                    // showlead = true;
+                    window.sessionStorage.setItem('showlead', '1');
                     $('body').removeClass('modal-open');
                     $('#exit-popup').removeClass('show');
                 }
@@ -224,9 +226,9 @@ const app =  {
 
             app.functions.smoothAncora();
 
-            if($('.video-imitacao .video-area .link').length){
-                $('.video-imitacao .video-area .link').simpleLightbox();
-            }
+            // if($('.video-imitacao .video-area .link').length){
+            //     $('.video-imitacao .video-area .link').simpleLightbox();
+            // }
         });
         
         app.functions.goToWhatsApp();
