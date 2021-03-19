@@ -9,7 +9,7 @@
                     <p class="subtitle">Deixe seu telefone que nossa equipe entrará em contato:</p>
                 </div>
 
-                <form action="../lead-exit" method="post" class="form" id="formSaida">
+                <form action="<?php echo get_site_url(); ?>/lead-exit" method="post" class="form" id="formSaida">
                     <div class="form-group form-placeholder-fixed name">
                         <input type="text" name="nm_saida" id="nm_saida" class="form-control" required="required" placeholder="Nome" />
                         <label class="placeholder" for="nm_saida"><i class="fas fa-user icon"></i></label>

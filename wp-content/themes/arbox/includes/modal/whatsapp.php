@@ -12,7 +12,7 @@
                     </p>
                 </div>
 
-                <form action="../whatsapp-lead" method="post" class="form" id="formWhatsApp">
+                <form action="<?php echo get_site_url(); ?>/whatsapp-lead" method="post" class="form" id="formWhatsApp">
                     <div class="form-group form-placeholder-fixed name">
                         <input type="text" name="nm_whatsapp" id="nm_whatsapp" class="form-control" required="required" placeholder="Nome" />
                         <label class="placeholder" for="nm_whatsapp"><i class="fas fa-user icon"></i></label>

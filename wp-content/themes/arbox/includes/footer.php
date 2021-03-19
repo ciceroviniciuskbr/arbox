@@ -4,13 +4,13 @@
             <div class="row form-area">
                 <div class="col-md-6 col-title-img">
                     <h3 class="title" title="Adquirir agora mesmo Caixa de Alumínio para Ar condicionado | Ar Box">Adquirir agora mesmo Caixa de Alumínio para Ar condicionado</h3>
-                    <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/caixa-aluminio-branco-ar-condicionado-ar-box.png" alt="Caixa para ar condicionado Ar Box" />
+                    <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/caixa-aluminio-branco-ar-condicionado-ar-box-1.png" alt="Caixa para ar condicionado Ar Box" />
                     <a class="btn link-whatsapp" id="whatsapp-btn" data-toggle="modal" data-target="#fale-whatsapp">
                         <p><i class="fab fa-whatsapp icon"></i>Tire suas dúvidas por whatsapp</p>
                     </a>
                 </div>
                 <div class="col-md-6 col-form">
-                    <form action="../envio-contato" method="POST" class="form">
+                    <form action="<?php echo get_site_url(); ?>/envio-contato" method="POST" class="form">
                         <div class="form-group col-12 form-placeholder-fixed">
                             <input type="text" name="nome" id="nome" class="form-control" required="required" />
                             <label class="placeholder" for="nome">Nome:</label>
@@ -26,7 +26,6 @@
                                 <option value="" selected="selected"></option>
                                 <option value="Síndico ou Zelador">Síndico ou Zelador</option>
                                 <option value="Administradora de Condomínios">Administradora de Condomínios</option>
-                                <option value="Construtora, Arquiteto ou Engenheiro">Construtora, Arquiteto ou Engenheiro</option>
                                 <option value="Construtora, Arquiteto ou Engenheiro">Construtora, Arquiteto ou Engenheiro</option>
                                 <option value="Outros">Outros</option>
                             </select>
@@ -51,6 +50,7 @@
                                 <option value="Redes Sociais">Redes Sociais</option>
                                 <option value="Indicação">Indicação</option>
                                 <option value="Prédio/Condomínio">Prédio/Condomínio</option>
+                                <option value="Sindiconet">Sindiconet</option>
                             </select>
                             <label class="placeholder" for="onde_encontrou">Onde nos encontrou?</label>
                         </div>
