@@ -11,7 +11,7 @@ $topo = get_field('topo'); ?>
                 <h1 class="title" title=""><?php echo $topo['titulo']; ?></h1>
                 <h2 class="subtitle" title=""><?php echo $topo['subtitulo']; ?></h2>
 
-                <a href="<?php echo $topo['botao']['link_url']; ?>" class="btn btn-green"><?php echo $topo['botao']['texto_do_botao']; ?></a>
+                <a href="<?php echo $topo['botao']['link_url']; ?>" class="btn btn-green anchor"><?php echo $topo['botao']['texto_do_botao']; ?></a>
             </div>
             
             <div class="col-md-4 tipos-area">
@@ -47,7 +47,7 @@ $topo = get_field('topo'); ?>
                 <h3 class="title">Entenda por que a <b>AR Box</b> irá valorizar o seu condomínio</h3>
             </div>
             <div class="col-md-7 text-area">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <p>As caixas da Ar Box além de solucionar o problema da falta de padronização do local de instalação dos aparelhos de ar condicionado, disfarça os equipamentos valorizando a fachada do prédio e agradando aos moradores que podem optar pelo ar de janela ou split.</p>
                 <a href="https://www.arboxcaixas.com.br/como_comprar" class="btn btn-green">Como comprar</a>
             </div>
         </div>

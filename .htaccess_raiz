@@ -1,0 +1,42 @@
+<IfModule mod_rewrite.c>
+    	
+	RewriteEngine On
+	RewriteCond %{HTTPS} !=on
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+	RewriteEngine On
+    	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	
+	RewriteCond %{HTTP_HOST} ^como_comprar\. [NC]
+	RewriteRule ^contato/?$ /contato.php [NC,L]
+	RewriteRule ^contato2/?$ /contato2.php [NC,L]
+	RewriteRule ^index/?$ /index.php [NC,L]
+	RewriteRule ^produto/?$ /produto.php [NC,L]
+	RewriteRule ^quem_somos/?$ /quem_somos.php [NC,L]
+	# RewriteRule ^como_comprar/?$ /como_comprar.php [NC,L]
+	# RewriteRule ^como_comprar2/?$ /como_comprar2.php [NC,L]
+
+	RewriteRule ^blog/([0-9]+)/([0-9]+)/([a-z0-9-]+)/?$ /blog.php?pagina=$1&id_categoria=$2 [NC]
+	RewriteRule ^blog_descricao/([0-9]+)/([a-z0-9-]+)/?$ /blog_descricao.php?id_blog=$1 [NC]
+	
+	Options All -Indexes
+	RewriteRule ^includes/ - [F,L]
+
+</IfModule>
+
+ErrorDocument 400 /requisicao-invalida.htm
+ErrorDocument 403 /acesso-proibido.htm
+ErrorDocument 404 /nao-encontrado.htm
+ErrorDocument 500 /erro-interno-do-servidor.htm
+
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+<files includes/config/conexao.php>
+order allow,deny
+deny from all
+</files>

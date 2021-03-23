@@ -40,7 +40,7 @@ if($wpdb->insert($table, $insert_array)){
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    wp_mail('contato@arbox.com.br', $assunto, $template, $headers);
+    wp_mail('contato@arboxcaixas.com.br', $assunto, $template, $headers);
     wp_mail($email, 'Sua mensagem de contato foi enviada para a Ar Box', $template, $headers);
 
     wp_redirect( get_site_url() .'/obrigado-formulario');

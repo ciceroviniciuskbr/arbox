@@ -10,9 +10,11 @@ php_value upload_max_filesize 32M
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
+#RewriteBase /como_comprar/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /como_comprar/index.php [L]
 RewriteRule . /index.php [L]
 </IfModule>
 
