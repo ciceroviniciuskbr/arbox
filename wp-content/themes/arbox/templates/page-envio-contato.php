@@ -42,6 +42,7 @@ if($wpdb->insert($table, $insert_array)){
     
     foreach($variaveis as $key => $value){
         $template = str_replace('{{ '.$key.' }}', $value, $template);
+        $template_user = str_replace('{{ '.$key.' }}', $value, $template_user);
     }
 
     // $headers = 'From: '. $email . "\r\n" .'Reply-To: ' . $email . "\r\n";
@@ -50,20 +51,16 @@ if($wpdb->insert($table, $insert_array)){
     // $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
-    // $headers[] = 'From: Ar Box <financeiro@arboxcaixas.com.br>';
-    $headers[] = 'From: Cicero <cicero.vinicius@kbrtec.com.br>';
+    $headers[] = 'From: AR Box Caixas <financeiro@arboxcaixas.com.br>';
     $headers[] = 'Reply-To: '. $nome .' <'. $email . '>';
 
     $headers_user[] = 'Content-Type: text/html; charset=UTF-8';
-    // $headers_user[] = 'From: Ar Box <financeiro@arboxcaixas.com.br>';
-    $headers_user[] = 'From: Cicero <cicero.vinicius@kbrtec.com.br>';
-    // $headers_user[] = 'Reply-To: Ar Box <financeiro@arboxcaixas.com.br>';
-    $headers_user[] = 'Reply-To: Cicero <cicero.vinicius@kbrtec.com.br>';
+    $headers_user[] = 'From: AR Box Caixas <financeiro@arboxcaixas.com.br>';
+    $headers_user[] = 'Reply-To: AR Box Caixas <financeiro@arboxcaixas.com.br>';
     
     // wp_mail('contato@arboxcaixas.com.br', $assunto, $template, $headers);
-    // wp_mail('financeiro@arboxcaixas.com.br', $assunto, $template, $headers);
-    wp_mail('cicero.vinicius@kbrtec.com.br', $assunto, $template, $headers);
-    wp_mail($email, 'Sua mensagem de contato foi enviada para a Ar Box', $template_user, $headers_user);
+    wp_mail('financeiro@arboxcaixas.com.br', $assunto, $template, $headers);
+    wp_mail($email, 'Sua mensagem de contato foi enviada para a AR Box Caixas', $template_user, $headers_user);
 
     wp_redirect( get_site_url() .'/obrigado-formulario');
     exit();
