@@ -15,7 +15,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                 <button class="navbar-toggler btn collapsed" type="button" data-toggle="collapse" data-target="#menuLinks" aria-controls="menuLinks" aria-expanded="false"></button>
             </div>
             
-            <nav class="col-12 col-md-9 col-lg-7 navbar navbar-expand-lg">
+            <nav class="col-12 col-md-9 col-lg-9 navbar navbar-expand-lg">
                 <div class="collapse navbar-collapse" id="menuLinks">
                     <?php
                         wp_nav_menu( array(

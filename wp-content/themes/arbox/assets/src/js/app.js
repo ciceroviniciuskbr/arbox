@@ -8,9 +8,9 @@ import "bootstrap/js/dist/util";
 
 const app =  {
     breakpoints: {
-		mobile: '(max-width: 767px)',
-		tablet: '(min-width: 768px) and (max-width: 991px)',
-		desktop: '(min-width: 992px)'
+        mobile: '(max-width: 767px)',
+        tablet: '(min-width: 768px) and (max-width: 991px)',
+        desktop: '(min-width: 992px)'
     },
     
     plugins: {
@@ -101,8 +101,8 @@ const app =  {
     
     functions: {
         checkDevice: function(device){
-			device = app.breakpoints[device];
-			return (window.matchMedia(device).matches)? true : false;
+            device = app.breakpoints[device];
+            return (window.matchMedia(device).matches)? true : false;
         },
         
         smoothAncora: function() {
@@ -129,6 +129,48 @@ const app =  {
                             window.location.hash = hash;
                         });
                     }
+                }
+            });
+        },
+
+        popupExit: function(){
+            var formValidation = $(".hustle-ui.hustle-popup form").validate({
+                rules: {
+                    nm_saida: "required",
+                    tel_saida: "required",
+                },
+                errorPlacement: function(error, element) {
+                    error.insertBefore(element);
+                }
+            }),
+            inputs = $(".hustle-ui.hustle-popup form").find('input.form-control, textarea.form-control'),
+            btnEnviar = $(".hustle-ui.hustle-popup form").find('#btnEnviar'),
+            valid = true,
+            count = 0;
+            
+            jQuery.extend(jQuery.validator.messages, {
+                required: "Este campo é obrigatório."
+            });
+            
+            btnEnviar.on('click', function(e){
+                e.preventDefault();
+                
+                inputs.each(function() {
+                    if(!formValidation.element($(this))){
+                        count++;
+                    }
+                });
+                
+                if(count == 0){
+                    valid = true;
+                }else{
+                    valid = false;
+                }
+                
+                count = 0;
+                
+                if(valid){
+                    $(".hustle-ui.hustle-popup form").submit();
                 }
             });
         },
@@ -188,17 +230,21 @@ const app =  {
             // var showlead = false;
             $(document).ready(function () {
                 setTimeout(function () {
-                    $(document).mouseleave(function () {
-                        // if (showlead != true)
-                        if (window.sessionStorage.getItem('showlead') == null) {
-                            // showlead = true;
-                            $('body').addClass('modal-open');
-                            $('#exit-popup').addClass('show');
-                        }
+                    // $(document).mouseleave(function () {
+                    // $(document).on('mouseleave', function (e) {
+                    $('html').on('mouseleave', function (e) {
+                        // if ('input' !== e.target.nodeName) {
+                            // if (showlead != true)
+                            if (window.sessionStorage.getItem('showlead') == null) {
+                                // showlead = true;
+                                $('body').addClass('modal-open');
+                                $('#exit-popup').addClass('show');
+                            }
+                        // }
                     })
                 }, 5000);
             });
-
+            
             $('#exit-popup, #exit-popup .close').on('click', function(e) {
                 if($(e.target).hasClass('modal') || $(e.target).hasClass('close')){
                     // showlead = true;
@@ -214,31 +260,34 @@ const app =  {
         if(app.functions.checkDevice('mobile') || app.functions.checkDevice('tablet')){
             $('#topo #video').remove();
         }
-
+        
         $(document).ready(function(){
             if($('#topo #video').length){
-
+                
                 if(!app.functions.checkDevice('mobile') && !app.functions.checkDevice('tablet')){
                     var videoSrc = $('#topo #video source').attr('data-src');
                     $('#topo #video').attr('src', videoSrc);
                 }
             }
-
+            
             app.functions.smoothAncora();
-
+            
             // if($('.video-imitacao .video-area .link').length){
             //     $('.video-imitacao .video-area .link').simpleLightbox();
             // }
         });
         
         app.functions.goToWhatsApp();
+        app.functions.popupExit();
         app.plugins.slick.avaliacoes();
         app.plugins.slick.antesDepois();
         app.plugins.mask();
-
+        
+        /*
         if (window.sessionStorage.getItem('showlead') == null) {
             app.functions.modalPopupExit();
         }
+        */
     }
 }
 

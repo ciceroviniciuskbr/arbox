@@ -21,6 +21,11 @@
                             <label class="placeholder" for="email">Email:</label>
                         </div>
 
+                        <div class="form-group col-12 form-placeholder-fixed">
+                            <input type="text" name="telefone" id="telefone" class="form-control telcelphone" data-mask="telcelphone" required="required" />
+                            <label class="placeholder" for="telefone">Telefone:</label>
+                        </div>
+
                         <div class="form-group col-12 form-placeholder-fixed form-select eu-sou">
                             <select id="eu_sou" name="eu_sou" class="form-control" required="required">
                                 <option value="" selected="selected"></option>
@@ -33,7 +38,7 @@
                         </div>
 
                         <div class="form-group col-12 form-placeholder-fixed form-select qtde-caixas">
-                            <select id="quantidade" name="quantidade" class="form-control">
+                            <select id="quantidade" name="quantidade" class="form-control" required="required">
                                 <option value="" selected="selected"></option>
                                 <option value="0 - 10">0 - 10</option>
                                 <option value="11 - 50">11 - 50</option>
@@ -44,7 +49,7 @@
                         </div>
 
                         <div class="form-group col-12 form-placeholder-fixed form-select onde-estamos">
-                            <select id="onde_encontrou" name="onde_encontrou" class="form-control">
+                            <select id="onde_encontrou" name="onde_encontrou" class="form-control" required="required">
                                 <option value="" selected="selected"></option>
                                 <option value="Google">Google</option>
                                 <option value="Redes Sociais">Redes Sociais</option>

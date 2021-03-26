@@ -48,7 +48,7 @@ $topo = get_field('topo'); ?>
             </div>
             <div class="col-md-7 text-area">
                 <p>As caixas da Ar Box além de solucionar o problema da falta de padronização do local de instalação dos aparelhos de ar condicionado, disfarça os equipamentos valorizando a fachada do prédio e agradando aos moradores que podem optar pelo ar de janela ou split.</p>
-                <a href="https://www.arboxcaixas.com.br/como_comprar" class="btn btn-green">Como comprar</a>
+                <a href="#rodape" class="btn btn-green anchor">Como comprar</a>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@ $topo = get_field('topo'); ?>
 </main>
 <?php get_template_part( 'includes/whatsapp-btn'); ?>
 <?php get_template_part( 'includes/modal/whatsapp'); ?>
-<?php get_template_part( 'includes/modal/exit'); ?>
+<?php // get_template_part( 'includes/modal/exit'); ?>
 
 <?php $form_footer = FALSE; ?>
 <?php get_template_part( 'includes/footer'); ?>

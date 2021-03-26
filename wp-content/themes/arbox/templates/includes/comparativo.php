@@ -36,7 +36,7 @@
             <div class="col arbox">
                 <div class="column-header">
                     <div class="img">
-                        <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/caixa-de-aluminio-ar-box.jpg" alt="Ar Box" />
+                        <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/caixa-de-aluminio-ar-box-1.jpg" alt="Ar Box" />
                     </div>
                     <div class="title-area">
                         <h2 class="title">Caixa de alumínio Ar box</h2>

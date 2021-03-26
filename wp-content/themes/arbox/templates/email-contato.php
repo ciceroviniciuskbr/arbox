@@ -10,7 +10,7 @@
                 <table width="100%" border="0" cellspacing="15" cellpadding="15">
                     <tr>
                         <td bgcolor="#FFFFFF">
-                            <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"> Um contato foi enviado atrav&eacute;s do site no dia <strong>{{ day }}</strong> &agrave;s <strong>{{ hour }}</strong>. <br><br>Seguem as informa&ccedil;&otilde;es: </font></p>
+                            <p><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"> Um contato foi enviado atrav&eacute;s da landing page da Ar Box no dia <strong>{{ day }}</strong> &agrave;s <strong>{{ hour }}</strong>. <br><br>Seguem as informa&ccedil;&otilde;es: </font></p>
                             <table width="100%" border="0" cellspacing="3" cellpadding="3">
                                 <tr>
                                     <td width="23%" height="23" bgcolor="#EFEFEF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><strong>Nome:</strong></font></td>
@@ -21,8 +21,12 @@
                                     <td height="23"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">{{ email }}</font></td>
                                 </tr>
                                 <tr>
+                                    <td height="23" bgcolor="#EFEFEF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><strong>Telefone:</strong></font></td>
+                                    <td height="23"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">{{ telefone }}</font></td>
+                                </tr>
+                                <tr>
                                     <td height="23" bgcolor="#EFEFEF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><strong>Eu sou:</strong></font></td>
-                                    <td height="23"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">{{ eu_sou }}</font></td>
+                                    <td height="23"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">{{ papel }}</font></td>
                                 </tr>
                                 <tr>
                                     <td height="23" bgcolor="#EFEFEF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000"><strong>Quantidade de caixas</strong></font></td>

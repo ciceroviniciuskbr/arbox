@@ -4,7 +4,7 @@
             <div class="col-md-4 title-area">
                 <h3 class="title" title="Ar Box">O produto</h3>
                 <h4 class="subtitle" title="Entenda por que a AR Box irá valorizar o seu condomínio">Entenda por que a <strong>AR Box</strong> irá valorizar o seu condomínio</h4>
-                <a href="https://www.arboxcaixas.com.br/como_comprar" class="btn btn-green">Como comprar</a>
+                <a href="#rodape" class="btn btn-green anchor">Como comprar</a>
             </div>
             <div class="col-md-7 video-area">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/img-video-ar-box.jpg" class="img-fluid" alt="Ar Box" title="Clique para ver o vídeo" />

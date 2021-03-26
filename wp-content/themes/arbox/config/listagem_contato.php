@@ -61,6 +61,7 @@
 						<th><b><span>Nome</span></b><span class="sorting-indicator"></span></th>
 
                         <th><b><span>E-mail</span></b><span class="sorting-indicator"></span></th>
+                        <th><b><span>Telefone</span></b><span class="sorting-indicator"></span></th>
                         <th><b><span>Papel</span></b><span class="sorting-indicator"></span></th>
                         <th><b><span>Qtde de caixas</span></b><span class="sorting-indicator"></span></th>
                         <th><b><span>Onde nos encontrou</span></b><span class="sorting-indicator"></span></th>
@@ -94,6 +95,7 @@
 								<td><?= ucwords(strtolower($dado->nm_contato)) ?></td>
 
                                 <td><?= $dado->email_contato ?></td>
+                                <td><?= $dado->tel_contato ?></td>
 
                                 <td><?= $dado->papel_contato ?></td>
                                 <td><?= $dado->qt_caixas_contato ?></td>

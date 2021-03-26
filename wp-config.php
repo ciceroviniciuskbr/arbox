@@ -84,6 +84,8 @@ $table_prefix = 'wp_';
  */
 define( 'WP_DEBUG', true );
 
+define( 'WP_AUTO_UPDATE_CORE', false );
+
 /* Isto é tudo, pode parar de editar! :) */
 
 /** Caminho absoluto para o diretório WordPress. */

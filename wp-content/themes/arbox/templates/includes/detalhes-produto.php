@@ -11,31 +11,25 @@
         <div class="col-md-3 item">
             <div class="img">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/vista-lateral-caixa-de-aluminio-ar-box.jpg" alt="Vista Lateral | Ar Box" />
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/vista-lateral-caixa-de-aluminio-ar-box.jpg" data-lity></a>
             </div>
             <div class="text">
-                <h3 class="nome" title="Vista Lateral | Ar Box"><i class="far fa-eye icon"></i> Vista Lateral</h3>
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/vista-lateral-caixa-de-aluminio-ar-box.jpg" data-lity></a>
+                <h3 class="nome" title="Vista Lateral | Ar Box">Vista Lateral</h3>
             </div>
         </div>
         <div class="col-md-3 item">
             <div class="img">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/vista-do-fundo-caixa-de-aluminio-ar-box.jpg" alt="Vista de Fundo | Ar Box" />
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/vista-do-fundo-caixa-de-aluminio-ar-box.jpg" data-lity></a>
             </div>
             <div class="text">
-                <h3 class="nome" title="Vista de Fundo | Ar Box"><i class="far fa-eye icon"></i> Vista de Fundo</h3>
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/vista-do-fundo-caixa-de-aluminio-ar-box.jpg" data-lity></a>
+                <h3 class="nome" title="Vista de Fundo | Ar Box">Vista de Fundo</h3>
             </div>
         </div>
         <div class="col-md-3 item">
             <div class="img">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/vista-da-frente-caixa-de-aluminio-ar-box.jpg" alt="Vista de Frente | Ar Box" />
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/vista-da-frente-caixa-de-aluminio-ar-box.jpg" data-lity></a>
             </div>
             <div class="text">
-                <h3 class="nome" title="Vista de Frente | Ar Box"><i class="far fa-eye icon"></i> Vista de Frente</h3>
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/vista-da-frente-caixa-de-aluminio-ar-box.jpg" data-lity></a>
+                <h3 class="nome" title="Vista de Frente | Ar Box">Vista de Frente</h3>
             </div>
         </div>
         <div class="col-md-3 item">
@@ -64,11 +58,9 @@
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/aluminio-preto-ar-box.jpg" class="img-fluid" alt="Alumínio Preto" />
                     </li>
                 </ul>
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/cores-caixa-de-aluminio-ar-box.jpg" data-lity></a>
             </div>
             <div class="text">
                 <h3 class="nome" title="Vista Lateral | Ar Box">Cores disponíveis da caixa</h3>
-                <a href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/images/produto/gallery/cores-caixa-de-aluminio-ar-box.jpg" data-lity></a>
             </div>
         </div>
     </div>
