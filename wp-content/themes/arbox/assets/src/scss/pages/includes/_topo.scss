@@ -205,6 +205,15 @@
         background-image: url('#{$path_img}predio-caixa-de-ar-condicionado-ar-box.jpg');
 
         .title-area{
+            .subtitle{
+                a{
+                    color: $orange;
+
+                    &:hover{
+                        color: darken($orange, 10%);
+                    }
+                }
+            }
             .btn{
                 &:after{
                     display: none;

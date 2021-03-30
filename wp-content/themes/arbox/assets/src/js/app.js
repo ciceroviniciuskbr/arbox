@@ -144,7 +144,7 @@ const app =  {
                 }
             }),
             inputs = $(".hustle-ui.hustle-popup form").find('input.form-control, textarea.form-control'),
-            btnEnviar = $(".hustle-ui.hustle-popup form").find('#btnEnviar'),
+            btnEnviar = $(".hustle-ui.hustle-popup form").find('#btnEnviarWhatsApp'),
             valid = true,
             count = 0;
             
@@ -171,6 +171,55 @@ const app =  {
                 
                 if(valid){
                     $(".hustle-ui.hustle-popup form").submit();
+                }
+            });
+        },
+
+        popuEbook: function(){
+            var formValidation = $("#ebook-popup form").validate({
+                errorPlacement: function(error, element) {
+                    error.insertBefore(element);
+                }
+            }),
+            inputs = $("#ebook-popup form").find('input.form-control, select.form-control, textarea.form-control'),
+            btnEnviar = $("#ebook-popup form").find('#btnEnviarEbook'),
+            valid = true,
+            count = 0;
+            
+            jQuery.extend(jQuery.validator.messages, {
+                required: "Este campo é obrigatório."
+            });
+            
+            btnEnviar.on('click', function(e){
+                e.preventDefault();
+                
+                inputs.each(function() {
+                    // $('select[name=selector] option').filter(':selected').val()
+    //                 if($(this).is("select")) {
+    //                     var select = $(this);
+    // var result = select.options[e.selectedIndex].value;
+    // console.log('value is: ' + result);
+                        
+    //                     // if($('option').filter(':selected').val())
+    //                 }else{
+
+    //                 }
+
+                    if(!formValidation.element($(this))){
+                        count++;
+                    }
+                });
+                
+                if(count == 0){
+                    valid = true;
+                }else{
+                    valid = false;
+                }
+                
+                count = 0;
+                
+                if(valid){
+                    $("#ebook-popup form").submit();
                 }
             });
         },
@@ -271,6 +320,14 @@ const app =  {
             }
             
             app.functions.smoothAncora();
+
+            $('#menuLinks .open-ebook').on('click', function(){
+                $('#ebook-popup').addClass('show');
+            });
+
+            $('#ebook-popup .close').on('click', function(){
+                $('#ebook-popup').removeClass('show');
+            });
             
             // if($('.video-imitacao .video-area .link').length){
             //     $('.video-imitacao .video-area .link').simpleLightbox();
@@ -279,6 +336,7 @@ const app =  {
         
         app.functions.goToWhatsApp();
         app.functions.popupExit();
+        app.functions.popuEbook();
         app.plugins.slick.avaliacoes();
         app.plugins.slick.antesDepois();
         app.plugins.mask();

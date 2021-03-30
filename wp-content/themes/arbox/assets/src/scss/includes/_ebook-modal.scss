@@ -1,0 +1,234 @@
+#ebook-popup{
+    background: rgba($black, 0.8);
+
+    &.show{
+        display: flex;
+    }
+    .modal-content{
+        background: url('#{$path_img}predio-caixa-de-ar-condicionado-ar-box.jpg') center no-repeat;
+        background-size: cover;
+        width: 600px;
+        max-width: 100%;
+        border-radius: 10px;
+        border: none;
+        overflow: hidden;
+    }
+    .modal-body{
+        padding: 0;
+    }
+    
+    .title-area{
+        // background: rgb(0 0 0 / 62%);
+        background: $orange;
+        font-family: $font_montserrat;
+        padding: 15px;
+        color: $white;
+        margin-bottom: 0;
+        padding: 3em 2em;
+        position: relative;
+        
+        .icon{
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 2.5em;
+        }
+        
+        .title{
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .subtitle{
+            font-size: 0.8em;
+            line-height: 1.2em;
+            margin-bottom: 0;
+        }
+        
+        .close{
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            opacity: 0.3;
+            
+            &:hover {
+                opacity: 1;
+            }
+            &:before, &:after {
+                position: absolute;
+                left: 9px;
+                content: ' ';
+                height: 20px;
+                width: 2px;
+                background-color: $white;
+            }
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }    
+    }
+    
+    .form{
+        padding: 15px;
+        
+        .form-control{
+            border-radius: 50px;
+        }
+        input, textarea{
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            font-size: 0.9em;
+        }
+        label{
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+        
+        .form-group{
+            margin-bottom: 15px;
+            max-height: 100%;
+            height: auto;
+            position: relative;
+            
+            &.form-placeholder-fixed{
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                
+                input, textarea, .placeholder{
+                    height: 54px;
+                    max-height: 54px;
+                }
+                
+                .placeholder{
+                    order: 1;
+                    .icon{
+                        color: $orange;
+                    }
+                }
+                input, textarea{
+                    order: 2;
+                }
+                .form-control{
+                    box-shadow: none !important;
+                    border-top-left-radius: 0 !important;
+                    border-bottom-left-radius: 0 !important;
+
+                    &:focus{
+                        border-color: $orange !important;
+                        
+                        @include form_placeholder(){
+                            color: $orange !important;
+                        }
+                        
+                        & + .placeholder{
+                            border-color: $orange !important;
+                            
+                            .icon{
+                                color: $orange;
+                            }
+                        }
+                    }
+
+                    &.error{
+                        &, &:focus{
+                            border-color: $red !important;
+
+                            @include form_placeholder(){
+                                color: $red !important;
+                            }
+                            & + .placeholder{
+                                border-color: $red !important;
+                                
+                                .icon{
+                                    color: $red !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .placeholder{
+                    border-top-left-radius: 50px !important;
+                    border-bottom-left-radius: 50px !important;
+                }
+                
+                &.msg{
+                    max-height: 100px;
+                    height: 100px;
+
+                    .placeholder, .form-control{
+                        height: 100%;
+                        max-height: 100%;
+                    }
+                    
+                    .placeholder{
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        height: 100%;
+                    }
+                    .form-control{
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                }
+
+                &.form-select{
+                    // flex-direction: row-reverse;
+                    &:after{
+                        top: 23px;
+                    }
+                    .placeholder{
+                        order: 1;
+                    }
+                    select{
+                        height: auto;
+                        min-height: 54px;
+                        order: 2;
+                        width: 100%;
+
+                        &.error{
+                            font-size: 0.9em;
+                            color: $red !important;
+                        }
+                    }
+                }
+            }
+            
+            label.error{
+                //             position: absolute;
+                // bottom: -20px;
+                // left: 36px;
+                margin: 5px 0 0 35px !important;
+                font-size: 0.7em;
+                width: 100%;
+                order: 3;
+            }
+        }
+        
+        .btn-wrap{
+            text-align: center;
+            
+            .btn{
+                margin: 0 auto;
+                border-radius: 50px;
+                padding: 12px 2.5em 15px;
+            }
+        }
+    }
+
+    @media(max-width:767px){
+        .modal-dialog{
+            margin: auto;
+        }
+        .modal-content{
+            width: 100%;
+        }
+    }
+}

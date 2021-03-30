@@ -130,6 +130,7 @@
         <a href="#topo" id="toUp" class="anchor"></a>
     </footer>
 <?php wp_footer(); ?>
+<?php get_template_part('includes/modal/ebook'); ?>
 <?php get_template_part('includes/scripts'); ?>
 </body>
 </html>

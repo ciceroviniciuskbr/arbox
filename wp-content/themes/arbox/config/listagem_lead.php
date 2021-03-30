@@ -131,13 +131,13 @@
                 <?php
 
                     if ($pc>1) {
-                        echo " <a href='?page=whatsapp_menu&pagina=$anterior'><- Anterior</a> ";
+                        echo " <a href='?page=lead_menu&pagina=$anterior'><- Anterior</a> ";
                     }
 
                     echo "|";
 
                     if ($pc<$tp) {
-                        echo " <a href='?page=whatsapp_menu&pagina=$proximo'>Próxima -></a>";
+                        echo " <a href='?page=lead_menu&pagina=$proximo'>Próxima -></a>";
                     }
 
                 ?>

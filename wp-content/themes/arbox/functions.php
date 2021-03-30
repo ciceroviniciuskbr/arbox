@@ -71,7 +71,7 @@ function whatsapp_menu() {
 		'whatsapp_menu',
 		'listar_lead_whatsapp',
 		'dashicons-media-spreadsheet',
-		28
+		27
 	);
 }
 
@@ -86,7 +86,7 @@ function lead_menu() {
 		'lead_menu',
 		'listar_lead_saida',
 		'dashicons-media-spreadsheet',
-		26
+		28
 	);
 }
 
@@ -101,6 +101,21 @@ function contato_menu() {
 		'contato_menu',
 		'listar_contato',
 		'dashicons-media-spreadsheet',
+		26
+	);
+}
+
+// Menu Leads Ebook
+add_action('admin_menu', 'ebook_menu');
+include("config/listagem_ebook.php");
+function ebook_menu() {
+	add_menu_page(
+		'Leads E-book',
+		'Leads E-book',
+		'administrator',
+		'ebook_menu',
+		'listar_lead_ebook',
+		'dashicons-book-alt',
 		29
 	);
 }

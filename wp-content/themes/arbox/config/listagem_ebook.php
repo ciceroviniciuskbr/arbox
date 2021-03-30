@@ -1,7 +1,8 @@
 <?php
     if(isset($_POST['excluir']))
-        $wpdb->delete( "wp_contato", array( 'cd_contato' => $_POST['excluir'] ) );
-	function listar_contato(){
+        $wpdb->delete( "wp_ebook", array( 'cd_ebook' => $_POST['excluir'] ) );
+        
+        function listar_lead_ebook(){
 
 			global $wpdb;
 
@@ -13,18 +14,18 @@
 			$inicio = $pc - 1;
 			$inicio = $inicio * $total_reg;
 
-			$busca = "Select * from wp_contato";
+			$busca = "Select * from wp_ebook";
 			$limite =  "LIMIT $inicio,$total_reg";
 
             if(isset($_GET['pesquisa']) && !is_null($_GET['pesquisa']) && !empty($_GET['pesquisa']) ){
-                $query = $busca." WHERE nm_contato LIKE '%".$_GET['pesquisa']."%' OR email_contato LIKE '%".$_GET['pesquisa']."%'";
+                $query = $busca." WHERE nm_ebook LIKE '%".$_GET['pesquisa']."%' OR email_ebook LIKE '%".$_GET['pesquisa']."%'";
 
-                $dados = $wpdb->get_results("$query ORDER BY cd_contato DESC $limite");
+                $dados = $wpdb->get_results("$query ORDER BY cd_ebook DESC $limite");
             } else {
-				$dados = $wpdb->get_results("$busca order by cd_contato desc $limite");
+				$dados = $wpdb->get_results("$busca order by cd_ebook desc $limite");
 			}
 
-			$tr =  $wpdb->get_var("SELECT COUNT(*) FROM wp_contato");
+			$tr =  $wpdb->get_var("SELECT COUNT(*) FROM wp_ebook");
 			$tp = $tr / $total_reg;
 
 			$anterior = $pc -1;
@@ -33,7 +34,7 @@
 
 		<div class="wrap">
 
-			<h1 class="wp-heading-inline">Contatos</h1>
+			<h1 class="wp-heading-inline">Leads E-book</h1>
 
 			<form id="comments-form" method="get">
 
@@ -92,20 +93,20 @@
 
 							<tr class="no-items">
 
-								<td><?= ucwords(strtolower($dado->nm_contato)) ?></td>
+								<td><?= ucwords(strtolower($dado->nm_ebook)) ?></td>
 
-                                <td><?= $dado->email_contato ?></td>
-                                <td><?= $dado->tel_contato ?></td>
+                                <td><?= $dado->email_ebook ?></td>
+                                <td><?= $dado->tel_ebook ?></td>
 
-                                <td><?= $dado->papel_contato ?></td>
-                                <td><?= $dado->qt_caixas_contato ?></td>
-                                <td><?= $dado->onde_encontrou_contato ?></td>
+                                <td><?= $dado->papel_ebook ?></td>
+                                <td><?= $dado->qt_caixas_ebook ?></td>
+                                <td><?= $dado->onde_encontrou_ebook ?></td>
 
-								<td><?= $dado->dt_contato ? date('d/m/Y', strtotime($dado->dt_contato)) : "" ?></td>
+								<td><?= $dado->dt_ebook ? date('d/m/Y', strtotime($dado->dt_ebook)) : "" ?></td>
 
                                 <td>
                                     <form method="post">
-                                        <input type="hidden" name="excluir" value="<?= esc_html($dado->cd_contato) ?>"/>
+                                        <input type="hidden" name="excluir" value="<?= esc_html($dado->cd_ebook) ?>"/>
                                         <input type="submit" class="button" value="Excluir"></a>
                                     </form>
                                 </td>
@@ -123,7 +124,7 @@
 				?>
 
 				<tbody id="the-extra-comment-list" data-wp-lists="list:comment" style="display: none;">
-					<tr class="no-items"><td class="colspanchange" colspan="5">Nenhum contato encontrado.</td></tr>
+					<tr class="no-items"><td class="colspanchange" colspan="5">Nenhum lead encontrado.</td></tr>
                 </tbody>
 
 				<?php
@@ -139,13 +140,13 @@
                 <?php
 
                     if ($pc>1) {
-                        echo " <a href='?page=contato_menu&pagina=$anterior'><- Anterior</a> ";
+                        echo " <a href='?page=ebook_menu&pagina=$anterior'><- Anterior</a> ";
                     }
 
                     echo "|";
 
                     if ($pc<$tp) {
-                        echo " <a href='?page=contato_menu&pagina=$proximo'>Próxima -></a>";
+                        echo " <a href='?page=ebook_menu&pagina=$proximo'>Próxima -></a>";
                     }
 
                 ?>
@@ -159,7 +160,7 @@
 					e.preventDefault();
 
 					let pesquisa = $("#pesquisa").val();
-                    let link = "<?php get_site_url() ?>/wp-admin/admin.php?page=contato_menu"
+                    let link = "<?php get_site_url() ?>/wp-admin/admin.php?page=ebook_menu"
 
                     if (pesquisa != "")
 					    link = link.concat("&pesquisa=" + pesquisa);
