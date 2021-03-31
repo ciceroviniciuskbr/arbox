@@ -54,18 +54,14 @@ if($wpdb->insert($table, $insert_array)){
     // $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
-    // $headers[] = 'From: AR Box Caixas <financeiro@arboxcaixas.com.br>';
-    $headers[] = 'From: AR Box Caixas <cicero.vinicius@kbrtec.com.br>';
+    $headers[] = 'From: AR Box Caixas <financeiro@arboxcaixas.com.br>';
     $headers[] = 'Reply-To: '. $nome .' <'. $email . '>';
 
     $headers_user[] = 'Content-Type: text/html; charset=UTF-8';
-    // $headers_user[] = 'From: AR Box Caixas <financeiro@arboxcaixas.com.br>';
-    $headers_user[] = 'From: AR Box Caixas <cicero.vinicius@kbrtec.com.br>';
-    // $headers_user[] = 'Reply-To: AR Box Caixas <financeiro@arboxcaixas.com.br>';
-    $headers_user[] = 'Reply-To: AR Box Caixas <cicero.vinicius@kbrtec.com.br>';
+    $headers_user[] = 'From: AR Box Caixas <financeiro@arboxcaixas.com.br>';
+    $headers_user[] = 'Reply-To: AR Box Caixas <financeiro@arboxcaixas.com.br>';
     
-    // wp_mail('financeiro@arboxcaixas.com.br', $assunto, $template, $headers);
-    wp_mail('cicero.vinicius@kbrtec.com.br', $assunto, $template, $headers);
+    wp_mail('financeiro@arboxcaixas.com.br', $assunto, $template, $headers);
     wp_mail($email, 'Você baixou o E-book da AR Box Caixas', $template_user, $headers_user);
 
     wp_redirect( get_site_url() .'/obrigado-ebook?ebook=1');
