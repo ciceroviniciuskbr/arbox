@@ -15,7 +15,7 @@ $telefone = (isset($_POST['telefone_ebook']))? $_POST['telefone_ebook'] : '';
 $quantidade = (isset($_POST['quantidade_ebook']))? $_POST['quantidade_ebook'] : '';
 $onde_encontrou = (isset($_POST['onde_encontrou_ebook']))? $_POST['onde_encontrou_ebook'] : '';
 
-$assunto = "[Download Ebook] -". $nome;
+$assunto = "[Download Ebook] - ". $nome;
 
 $table = $wpdb->prefix.'ebook';
 $insert_array = array(
@@ -68,12 +68,12 @@ if($wpdb->insert($table, $insert_array)){
     wp_mail('cicero.vinicius@kbrtec.com.br', $assunto, $template, $headers);
     wp_mail($email, 'Você baixou o E-book da AR Box Caixas', $template_user, $headers_user);
 
-    // wp_redirect( get_site_url() .'/obrigado-ebook');
+    wp_redirect( get_site_url() .'/obrigado-ebook?ebook=1');
     // echo "<script>window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank');</script>";
-    echo "<script>var newTab = window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank'); newTab.location;</script>";
-    echo '<script>setTimeout(function() { window.location.href = "'.get_site_url() .'/obrigado-ebook"; }, 1000);</script>';
+    // echo "<script>var newTab = window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank'); newTab.location;</script>";
+    // echo '<script>setTimeout(function() { window.location.href = "'.get_site_url() .'/obrigado-ebook"; }, 1000);</script>';
     exit();
 }
-// wp_redirect( get_site_url() .'/obrigado-ebook' );
-echo "<script>var newTab = window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank'); newTab.location;</script>";
-echo '<script>setTimeout(function() { window.location.href = "'.get_site_url() .'/obrigado-ebook"; }, 1000);</script>';
+wp_redirect( get_site_url() .'/obrigado-ebook?ebook=1' );
+// echo "<script>var newTab = window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank'); newTab.location;</script>";
+// echo '<script>setTimeout(function() { window.location.href = "'.get_site_url() .'/obrigado-ebook"; }, 1000);</script>';
