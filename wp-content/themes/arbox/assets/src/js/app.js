@@ -194,17 +194,6 @@ const app =  {
                 e.preventDefault();
                 
                 inputs.each(function() {
-                    // $('select[name=selector] option').filter(':selected').val()
-    //                 if($(this).is("select")) {
-    //                     var select = $(this);
-    // var result = select.options[e.selectedIndex].value;
-    // console.log('value is: ' + result);
-                        
-    //                     // if($('option').filter(':selected').val())
-    //                 }else{
-
-    //                 }
-
                     if(!formValidation.element($(this))){
                         count++;
                     }
@@ -309,6 +298,10 @@ const app =  {
         if(app.functions.checkDevice('mobile') || app.functions.checkDevice('tablet')){
             $('#topo #video').remove();
         }
+
+        if (window.location.href.indexOf("/obrigado") >= -1) {
+            $('#menuLinks .btn-orcamento').removeClass('anchor');
+        }
         
         $(document).ready(function(){
             if($('#topo #video').length){
@@ -340,7 +333,7 @@ const app =  {
         app.plugins.slick.avaliacoes();
         app.plugins.slick.antesDepois();
         app.plugins.mask();
-        
+
         /*
         if (window.sessionStorage.getItem('showlead') == null) {
             app.functions.modalPopupExit();

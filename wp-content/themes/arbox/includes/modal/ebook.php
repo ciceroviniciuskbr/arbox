@@ -12,8 +12,8 @@
                 <form action="<?php echo get_site_url(); ?>/envio-ebook" method="post" class="form" id="formEbook">
                 <!-- <form action="<?php echo get_site_url(); ?>/baixar-ebook" method="post" class="form" id="formEbook"> -->
                     <div class="form-group form-placeholder-fixed name">
-                        <input type="text" name="nm_ebook" id="nm_ebook" class="form-control" required="required" placeholder="Nome" />
-                        <label class="placeholder" for="nm_ebook"><i class="fas fa-user icon"></i></label>
+                        <input type="text" name="nome_ebook" id="nome_ebook" class="form-control" required="required" placeholder="Nome" />
+                        <label class="placeholder" for="nome_ebook"><i class="fas fa-user icon"></i></label>
                     </div>
                     
                     <div class="form-group form-placeholder-fixed email">
@@ -23,8 +23,8 @@
                     
                     <div class="form-row">
                         <div class="form-group col-md-6 form-placeholder-fixed eu-sou">
-                            <input type="tel" name="tel_ebook" id="tel_ebook" class="form-control telcelphone" required="required" placeholder="Telefone" />
-                            <label class="placeholder" for="tel_ebook"><i class="fas fa-phone-alt icon"></i></label>
+                            <input type="tel" name="telefone_ebook" id="telefone_ebook" class="form-control telcelphone" required="required" placeholder="Telefone" />
+                            <label class="placeholder" for="telefone_ebook"><i class="fas fa-phone-alt icon"></i></label>
                         </div>
                         
                         <div class="form-group col-md-6 form-placeholder-fixed form-select eu-sou">

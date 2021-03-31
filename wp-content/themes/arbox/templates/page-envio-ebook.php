@@ -8,14 +8,14 @@ function wpdbAtivar(){
 
 // $link = get_field("ebook", 32);
 $link = get_site_url() .'/baixar-ebook';
-$nome = $_POST['nome_ebook'];
-$email = $_POST['email_ebook'];
-$eu_sou = $_POST['eu_sou_ebook'];
-$telefone = $_POST['telefone_ebook'];
-$quantidade = $_POST['quantidade_ebook'];
-$onde_encontrou = $_POST['onde_encontrou_ebook'];
+$nome = (isset($_POST['nome_ebook']))? $_POST['nome_ebook'] : '';
+$email = (isset($_POST['email_ebook']))? $_POST['email_ebook'] : '';
+$eu_sou = (isset($_POST['eu_sou_ebook']))? $_POST['eu_sou_ebook'] : '';
+$telefone = (isset($_POST['telefone_ebook']))? $_POST['telefone_ebook'] : '';
+$quantidade = (isset($_POST['quantidade_ebook']))? $_POST['quantidade_ebook'] : '';
+$onde_encontrou = (isset($_POST['onde_encontrou_ebook']))? $_POST['onde_encontrou_ebook'] : '';
 
-$assunto = "[Download Ebook] ". $nome;
+$assunto = "[Download Ebook] -". $nome;
 
 $table = $wpdb->prefix.'ebook';
 $insert_array = array(
@@ -69,10 +69,11 @@ if($wpdb->insert($table, $insert_array)){
     wp_mail($email, 'Você baixou o E-book da AR Box Caixas', $template_user, $headers_user);
 
     // wp_redirect( get_site_url() .'/obrigado-ebook');
-    echo "<script>window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank');</script>";
+    // echo "<script>window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank');</script>";
+    echo "<script>var newTab = window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank'); newTab.location;</script>";
     echo '<script>setTimeout(function() { window.location.href = "'.get_site_url() .'/obrigado-ebook"; }, 1000);</script>';
     exit();
 }
 // wp_redirect( get_site_url() .'/obrigado-ebook' );
-echo "<script>window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank');</script>";
+echo "<script>var newTab = window.open('".  get_site_url() .'/baixar-ebook' ."', '_blank'); newTab.location;</script>";
 echo '<script>setTimeout(function() { window.location.href = "'.get_site_url() .'/obrigado-ebook"; }, 1000);</script>';
