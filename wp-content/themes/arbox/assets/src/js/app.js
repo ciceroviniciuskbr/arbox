@@ -298,8 +298,7 @@ const app =  {
         if(app.functions.checkDevice('mobile') || app.functions.checkDevice('tablet')){
             $('#topo #video').remove();
         }
-
-        if (window.location.href.indexOf("/obrigado") >= -1) {
+        if (window.location.href.indexOf("/obrigado") > -1) {
             $('#menuLinks .btn-orcamento').removeClass('anchor');
         }
         
@@ -314,7 +313,7 @@ const app =  {
             
             app.functions.smoothAncora();
 
-            $('#menuLinks .open-ebook').on('click', function(){
+            $('#menuLinks .open-ebook, #rodape .open-ebook').on('click', function(){
                 $('#ebook-popup').addClass('show');
             });
 
